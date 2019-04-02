@@ -44,6 +44,7 @@ TEXT-ALIGN: center
     <a href="fig/pac.png"><img src="fig/pac.png" width="43%"></a>
 <iframe width="56%" height="32%" src="https://www.youtube.com/embed/gsQZbHuR64o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h2>Publication</h2>
+<!--
 	  <b>Pixel Adaptive Convolutional Neural Networks</b>,
 	  <a href="https://suhangpro.github.io/">Hang Su</a>,
 	  <a href="https://varunjampani.github.io/">Varun Jampani</a>,
@@ -52,9 +53,27 @@ TEXT-ALIGN: center
 	  <a href="http://people.cs.umass.edu/~elm/">Erik Learned-Miller</a>,
 	  <a href="http://jankautz.com/">Jan Kautz</a>,
 	  <em>CVPR, 2019 (to appear)</em>
-	  <br />[<a href="">paper</a> (coming soon), <a href="pacnet.bib">bibtex</a>,
-		<a href="">code</a> (coming soon)
-	  ]
+	  <br /><a href="">[paper]</a> (coming soon), <a href="pacnet.bib">[bibtex]</a>
+
+-->
+<pre>
+@inproceedings{su2019pixel,
+  author    = {<a href="https://suhangpro.github.io/">Hang Su</a> and 
+	       <a href="https://varunjampani.github.io/">Varun Jampani</a> and 
+	       <a href="http://research.nvidia.com/person/deqing-sun">Deqing Sun</a> and 
+	       <a href="https://research.nvidia.com/person/orazio-gallo">Orazio Gallo</a> and 
+	       <a href="http://people.cs.umass.edu/~elm/">Erik Learned-Miller</a> and 
+	       <a href="http://jankautz.com/">Jan Kautz</a>},
+  title     = {Pixel Adaptive Convolutional Neural Networks},
+  booktitle = {Proceedings of the IEEE Conference on Computer 
+               Vision and Pattern Recognition (CVPR)},
+  year      = {2019}
+}
+</pre>
+<hr style="border-top: dotted 1px;" />
+    <h2>Downloads</h2>
+<p><a href="">[paper]</a>(coming soon) <a href="">[code]</a> (coming soon)</p>
+
 <hr style="border-top: dotted 1px;" />
     <h2>Summary</h2>
     <p>Convolutions are the fundamental building block of CNNs. The fact that their weights are spatially shared is one of the main reasons for their widespread use, but it also is a major limitation, as it makes convolutions content agnostic.</p> 
@@ -82,7 +101,7 @@ which performs competitively, while being considerably faster. In addition, we a
  
 <b>A few special cases</b>
 <ul> 
-	<li>Convolutioni $$Z=1, K=1$$ </li>
+	<li>Convolution $$Z=1, K=1$$ </li>
  
 	<li> Pooling $$Z=\frac{1}{\sum K}, W=1, K(:)=1$$ </li>
 
@@ -102,7 +121,6 @@ which performs competitively, while being considerably faster. In addition, we a
  $$Z=\frac{1}{\sum K}, W=1, K(f_p, f_q)= \alpha + \left(\sqrt{(\tilde{f}_p-f_q)^2+\epsilon^2}\right)^\lambda$$
  </p> <p>
          Choice #2 (symmetric kernel):
- 
  $$Z=\frac{1}{\sum K}, W=1, K(f_p, f_q)= \alpha + \left(\sqrt{\max(0,\tilde{f}_p-f_q)^2+\epsilon^2}\right)^\lambda$$
 </p><p>Notice the use of channel-wise kernel ($K(f_p, f_q)$ instead of $K(\mathbf{f}_p, \mathbf{f}_q)$) and additional filtering ($\tilde{f}_p$ instead of $f_p$).
 </p>
