@@ -1,0 +1,123 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Pixel Adaptive Convolution Neural Networks</title>
+<link href="pac.css" rel="stylesheet" type="text/css">
+<style type="text/css" media="all">
+img#network {
+PADDING-RIGHT: 0px;
+PADDING-LEFT: 10px;
+FLOAT: right;
+PADDING-BOTTOM: 10px;
+PADDING-TOP: 10px
+}
+#content {
+MARGIN-LEFT: auto;
+WIDTH: expression(document.body.clientWidth > 895? "895px": "auto" );
+MARGIN-RIGHT: auto;
+TEXT-ALIGN: left;
+max-width: 895px
+}
+BODY {
+TEXT-ALIGN: center
+}
+</style>
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+     });
+</script>
+</head>
+
+<body>
+  <div id="content">
+    <div id='head'>
+      <center>
+	<h1>Pixel Adaptive Convolutional Neural Networks</h1>
+      </center>
+    </div>
+
+    <br>
+    <a href="fig/pac.png"><img src="fig/pac.png" width="43%"></a>
+<iframe width="56%" height="32%" src="https://www.youtube.com/embed/gsQZbHuR64o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h2>Publication</h2>
+	  <b>Pixel Adaptive Convolutional Neural Networks</b>,
+	  <a href="https://suhangpro.github.io/">Hang Su</a>,
+	  <a href="https://varunjampani.github.io/">Varun Jampani</a>,
+	  <a href="http://research.nvidia.com/person/deqing-sun">Deqing Sun</a>,
+	  <a href="https://research.nvidia.com/person/orazio-gallo">Orazio Gallo</a>,
+	  <a href="http://people.cs.umass.edu/~elm/">Erik Learned-Miller</a>,
+	  <a href="http://jankautz.com/">Jan Kautz</a>,
+	  <em>CVPR, 2019 (to appear)</em>
+	  <br />[<a href="">paper</a> (coming soon), <a href="pacnet.bib">bibtex</a>,
+		<a href="">code</a> (coming soon)
+	  ]
+<hr style="border-top: dotted 1px;" />
+    <h2>Summary</h2>
+    <p>Convolutions are the fundamental building block of CNNs. The fact that their weights are spatially shared is one of the main reasons for their widespread use, but it also is a major limitation, as it makes convolutions content agnostic.</p> 
+
+
+<p>We propose a <em>pixel-adaptive convolution</em> (PAC) operation, a simple yet effective modification of standard convolutions, in which the filter weights are multiplied with a spatially-varying kernel that depends on learnable, local pixel features. PAC is a generalization of several popular filtering
+techniques and thus can be used for a wide range of use cases. Specifically, we demonstrate state-of-the-art performance when PAC is used for deep joint image upsampling. PAC also offers an effective
+alternative to fully-connected CRF (Full-CRF), called PAC-CRF, 
+which performs competitively, while being considerably faster. In addition, we also demonstrate that PAC can be used as a drop-in replacement for convolution layers in pre-trained networks, resulting in consistent performance improvements.
+    </p>
+<hr style="border-top: dotted 1px;" />
+    <h2>Pixel Adaptive Convolution</h2>
+
+<b>General formula of PAC</b>
+ $$\hat{\mathbf{I}}_p = \frac{1}{Z}\sum_{q \in nbr(p)} \mathbf{I}_q M_q W(q-p) K(\mathbf{f}_p, \mathbf{f}_q) + \mathbf{b}$$
+ 
+ 
+<b> Normalization options</b>
+<ul>
+ <li> mask only $$Z_p = \sum_q M_q $$ </li>
+ <li> $K$ only $$Z_p = \sum_q K(\mathbf{f}_p, \mathbf{f}_q) $$ </li>
+ <li> mask &amp; $K$ $$Z_p = \sum_q M_q K(\mathbf{f}_p, \mathbf{f}_q) $$ </li>
+</ul>
+ 
+ 
+<b>A few special cases</b>
+<ul> 
+	<li>Convolutioni $$Z=1, K=1$$ </li>
+ 
+	<li> Pooling $$Z=\frac{1}{\sum K}, W=1, K(:)=1$$ </li>
+
+ 	<li>Bilateral filtering &amp; ConvCRF [Teichmann and Cipolla 2018]</li>
+
+(no need of normalization when used in ConvCRF) 
+<p>
+ Choice #1: $$\mathbf{f}=(r,g,b), Z=\frac{1}{\sum K}, W=G^{xy}, K(\mathbf{f}_p, \mathbf{f}_q)=\exp\left(-\frac{1}{2} \|\mathbf{f}_p-\mathbf{f}_q\|^2\right)$$
+ </p><p>
+ Choice #2: $$\mathbf{f}=(r,g,b,x,y), Z=\frac{1}{\sum K}, W=1, K(\mathbf{f}_p, \mathbf{f}_q)=\exp\left(-\frac{1}{2} \|\mathbf{f}_p-\mathbf{f}_q\|^2\right)$$
+ </p>
+ 	<li>Detail-preserving Pooling [Saeedan et al. 2018]</li>
+ 
+<p>
+         Choice #1 (symmetric kernel):
+ 
+ $$Z=\frac{1}{\sum K}, W=1, K(f_p, f_q)= \alpha + \left(\sqrt{(\tilde{f}_p-f_q)^2+\epsilon^2}\right)^\lambda$$
+ </p> <p>
+         Choice #2 (symmetric kernel):
+ 
+ $$Z=\frac{1}{\sum K}, W=1, K(f_p, f_q)= \alpha + \left(\sqrt{\max(0,\tilde{f}_p-f_q)^2+\epsilon^2}\right)^\lambda$$
+</p><p>Notice the use of channel-wise kernel ($K(f_p, f_q)$ instead of $K(\mathbf{f}_p, \mathbf{f}_q)$) and additional filtering ($\tilde{f}_p$ instead of $f_p$).
+</p>
+</ul>
+<hr style="border-top: dotted 1px;" />
+     <h2>Acknowledgements</h2> We acknowledge support from AFRL and DARPA (agreement# FA8750-18-2-0126) and the MassTech Collaborative grant for funding the UMass GPU cluster.
+<hr style="border-top: dotted 1px;" />
+     <h2>References</h2>
+     <ul>
+	<li> Marvin T. T. Teichmann, Roberto Cipolla, Convolutional CRFs for Semantic Segmentation, arXiv:1805.04777, 2018 </li>
+       <li>Faraz Saeedan, Nicolas Weber, Michael Goesele, Stefan Roth,
+       "Detail-Preserving Pooling in Deep Networks", CVPR 2018</li>
+     </ul>
+<hr style="border-top: dotted 1px;" />
+    </div>
+</body>
+</html>
+
