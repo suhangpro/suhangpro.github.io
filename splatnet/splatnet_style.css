@@ -1,0 +1,48 @@
+a {
+        FONT-WEIGHT: bolder;
+        TEXT-DECORATION: none;
+}
+a:hover {
+        background-color: #FFCCFF;
+}
+A:link {
+        COLOR: #0033FF;
+        text-decoration: none;
+}
+A:visited {
+        COLOR: #0033FF;
+        text-decoration: none;
+}
+#content {
+        LINE-HEIGHT: 1.5; PADDING-TOP: 20px
+}
+#footer {
+        CLEAR: both; FONT-SIZE: x-small; PADDING-BOTTOM: 10px; PADDING-TOP: 20px
+}
+TABLE {
+        VERTICAL-ALIGN: top; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+BODY {
+        FONT-SIZE: small; COLOR: black; FONT-FAMILY: Georgia, "Times New Roman", Times, serif, Palatino, serif; BACKGROUND-COLOR: white
+}
+IMG {
+        BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none;
+}
+H3 {
+        MARGIN-TOP: 5px; FONT-SIZE: small; MARGIN-BOTTOM: 1px
+}
+H2 {
+        MARGIN-TOP: 10px; FONT-WEIGHT: normal; MARGIN-BOTTOM: 1px
+}
+P {
+        MARGIN-TOP: 0px
+}
+UL {
+        MARGIN-TOP: 1px; MARGIN-BOTTOM: 12px
+}
+DIV.abstract LI {
+        MARGIN: 1px
+}
+#people {
+        PADDING-LEFT: 10px; MARGIN-LEFT: 0px; LIST-STYLE-TYPE: none
+}

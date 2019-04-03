@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>SPLATNet: Sparse Lattice Networks for Point Cloud Processing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link media="all" href="splatnet_style.css" type="text/css" rel="StyleSheet">
+<style type="text/css" media="all">
+img#network {
+        PADDING-RIGHT: 0px;
+        PADDING-LEFT: 10px;
+        FLOAT: right;
+        PADDING-BOTTOM: 10px;
+        PADDING-TOP: 10px
+}
+#content {
+        MARGIN-LEFT: auto;
+        WIDTH: expression(document.body.clientWidth > 895? "895px": "auto" );
+        MARGIN-RIGHT: auto;
+        TEXT-ALIGN: left;
+        max-width: 895px
+}
+BODY {
+        TEXT-ALIGN: center
+}
+</style>
+</head>
+<body>
+<!-- github banner
+<a href="https://github.com/suhangpro/mvcnn"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+-->
+<div id="content">
+    <h1 align="center"><strong>SPLATNet: <br>
+    Sparse Lattice Networks for Point Cloud Processing</strong></h1>
+
+<!--
+  <p><img id="network" src="images/splatnet_teaser_large.png" width="850" align="middle"></p>
+-->
+<center><iframe width="640" height="360" src="https://www.youtube.com/embed/x18WUuBNK7E?rel=0&start=332&end=1172" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+
+<hr style="border-top: dotted 1px;" />
+
+<h2>People<a href="https://people.cs.umass.edu/~hsu/"><br>
+  </a></h2>
+<ul id="people">
+    <li><a href="https://suhangpro.github.io">Hang Su (UMass Amherst)</a></li>
+    <li><a href="https://varunjampani.github.io">Varun Jampani (NVIDIA)</a></li>
+    <li><a href="http://research.nvidia.com/person/deqing-sun">Deqing Sun (NVIDIA)</a></li>
+    <li><a href="http://people.cs.umass.edu/~smaji/">Subhransu Maji (UMass Amherst)</a></li>
+    <li><a href="http://people.cs.umass.edu/~kalo/">Evangelos Kalogerakis (UMass Amherst)</a></li>
+    <li><a href="http://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang (UC Merced)</a></li>
+    <li><a href="http://jankautz.com">Jan Kautz (NVIDIA)</a></li>
+  </ul>
+
+
+<!--
+  <h2>Updates</h2>
+  <p>A sample Caffe implementation is now available in additional to the Matlab version. Thanks <a href="http://people.cs.umass.edu/~hbhuang/">Haibin Huang</a> for the contribution!</p>
+-->
+
+<hr style="border-top: dotted 1px;" />
+
+  <h2>Abstract</h2>
+  <p>We present a network architecture for processing point clouds that directly operates on the collection of points represented as a sparse set of samples in a high-dimensional lattice. Naively applying convolutions on this lattice scales poorly both in terms of memory and computational cost as the size of the lattice increases. Instead, our network uses sparse bilateral convolutional layers as building blocks. These layers maintain efficiency by using indexing structures to apply convolutions only on occupied parts of the lattice, and allow flexible specification of the lattice structure enabling hierarchical and spatially-aware feature learning, as well as joint 2D-3D reasoning. Both point-based and image-based representations can be easily incorporated in a network with such layers and the resulting model can be trained in an end-to-end manner. We present results on 3D segmentation tasks where our approach outperforms existing state-of-the-art techniques.
+  </p>
+
+
+<hr style="border-top: dotted 1px;" />
+
+  <h2>Paper</h2>
+  <p>Hang Su, Varun Jampani, Deqing Sun, Subhransu Maji, Evangelos Kalogerakis, Ming-Hsuan Yang, and Jan Kautz, &quot;<strong>SPLATNet: Sparse Lattice Networks for Point Cloud Processing</strong>&quot;, <em>CVPR 2018 (oral, <font color="red">best paper honorable mention</font>)</em> <a href="https://arxiv.org/abs/1802.08275">[arXiv]</a> <a href="docs/splatnet.bib">[bibtex]</a>
+  </p>
+
+  <hr style="border-top: dotted 1px;" />
+  <h2>Code</h2>
+  <p><a href="https://github.com/NVlabs/splatnet">GiHub</a></p>
+
+<!--
+  <h2>Extras</h2>
+  <p><a href="code/reorientmeshfaces.7z">reorientmeshfaces.7z</a>: Code used to re-orient the faces of the ModelNet database meshes such that the surface normals point outwards i.e., are directed away from the shape interior.  The code uses ray casting to find the direction of largest visibility per triangle and might be slow for large meshes. </p>    
+
+-->
+<!-- GitHub Icon
+<a href="https://github.com/suhangpro/mvcnn"><img src="images/GitHub_Logo.png" alt="[github]" style="float:left;height:20px"></a>
+-->
+<hr style="border-top: dotted 1px;" />
+  <div id="footer"><a href="http://vis-www.cs.umass.edu/">back to Computer Vision Lab</a></div>
+</div>
+</body>
+</html>
