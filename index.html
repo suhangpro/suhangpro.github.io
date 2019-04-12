@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Hang Su" >
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="author" content="Hang Su">
+    <meta http-equiv="pragma" content="no-cache"/>
     <link rel="shortcut icon" href="http://www.umass.edu/favicon.ico">
 
     <title>Hang Su | UMass-Amherst</title>
@@ -18,249 +18,367 @@
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-	<body>
-		<!-- top navbar-->
-		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="container">
-        		<div class="navbar-header">
-          		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            		<span class="sr-only">Toggle navigation</span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-          		</button>
-          		<a class="navbar-brand" href="#"></a>
-        		</div>
-        		<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-            		<li class="active"><a href="#">Home</a></li>
-            		<li><a href="#">About</a></li>
-            		<li class="dropdown">
-            			<a class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
-            			<ul class = "dropdown-menu">
-            				<li><a href="#pac" data-target=".navbar-collapse">PAC</a></li>
-            				<li><a href="#splatnet" data-target=".navbar-collapse">SPLATNet</a></li>
-            				<li><a href="#erdosrenyi" data-target=".navbar-collapse">Face Clustering</a></li>
-            				<li><a href="#mvcnn" data-target=".navbar-collapse">MVCNN</a></li>
-            				<li><a href="#scene-attr">Scene Attributes</a></li>
-            				<li><a href="#gloc" data-target=".navbar-collapse">GLOC Occlusion</a></li>
-            				<li><a href="#face-detection">Face & Body Detection</a></li>
-            				<li><a href="#photo-quality">Photo Quality Assessment</a></li>
-            				<li><a href="#car-detection">Vehicle Detection</a></li>
-            				<li><a href="#3d-model">3D Modelling</a></li>
-            			</ul>
-            		</li>
-            		<li><a href="#mycalendar">Calendar</a></li>
-          		</ul>
-        		</div><!--/.nav-collapse -->
-      	</div>
-    	</div>
-		<!-- END top navbar-->
+<body>
+<!-- top navbar-->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#pac" data-target=".navbar-collapse">PAC</a></li>
+                        <li><a href="#splatnet" data-target=".navbar-collapse">SPLATNet</a></li>
+                        <li><a href="#erdosrenyi" data-target=".navbar-collapse">Face Clustering</a></li>
+                        <li><a href="#mvcnn" data-target=".navbar-collapse">MVCNN</a></li>
+                        <li><a href="#scene-attr">Scene Attributes</a></li>
+                        <li><a href="#gloc" data-target=".navbar-collapse">GLOC Occlusion</a></li>
+                        <li><a href="#face-detection">Face & Body Detection</a></li>
+                        <li><a href="#photo-quality">Photo Quality Assessment</a></li>
+                        <li><a href="#car-detection">Vehicle Detection</a></li>
+                        <li><a href="#3d-model">3D Modelling</a></li>
+                    </ul>
+                </li>
+                <li><a href="#mycalendar">Calendar</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<!-- END top navbar-->
 
- 		<div class = "container">
+<div class="container">
 
- 			<div class="row">
- 			
- 				<!-- SIDE INFO SECTION -->
- 				<div class="col-sm-3 side pull-right" style="font-size:100%" id="sideinfo">
- 					<a href="img/quabbin2.png"><img src = "img/quabbin2.png" width="225" alt="My face" class="img-thumbnail"></a>
- 					<h4>Contact</h4>
- 					<dl>
- 						<dt>Office</dt>
- 						<dd>256 CS Bldg.<br>
- 						140 Governors Dr.<br>
- 						Amherst, MA 01003
- 						</dd>
- 						<dt>Email</dt>
- 						<dd>hsu _at_ cs.umass.edu
- 						</dd>
- 					</dl>
-					<!--
- 					<h4>Resume</h4>
- 					<dl>
- 						<dd><a href="https://www.dropbox.com/s/4k7gbi8ntejdryb/resume.pdf?dl=0">[pdf]</a></dd>
- 					</dl>
-					-->
- 					<h4>Links</h4>
- 					<ul class="list-inline">
-						<li><a href="https://www.dropbox.com/s/4k7gbi8ntejdryb/resume.pdf?dl=0">CV</a><p style="color:#DE4E2F;display:inline">← MORE INFO!</p></li> <br />
-						<li><a href="https://scholar.google.com/citations?user=CCFN2YwAAAAJ&hl=en">Google Scholar</a></li> <br />
-						<li><a href="https://github.com/suhangpro">GitHub</a></li> <br />
-						<li><a href="http://www.linkedin.com/in/hangs/">LinkedIn</a></li>
- 					</ul>
- 					<h4>Meet Eclipse!</h4>
- 					<a href="https://goo.gl/photos/SEzbqEsgrKDbyWfx7"><img src="http://pctm.pitapata.com/mb4jm4.png" width="200" height="80" border="0" alt="PitaPata Cat tickers" /></a>
- 					<!-- TWEETS
- 					<div>
- 						<a class="twitter-timeline" href="https://twitter.com/suhangpro" data-widget-id="439775337375735809">Tweets by @suhangpro</a>
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-					</div>
-					TWEETS -->
- 				</div>
-				<!-- END SIDE INFO SECTION -->
- 			
- 				<!-- MAIN PANEL -->
- 				<div class="col-sm-9 main pull-left">
- 					<h1  class="myanchor pagetitle" style="font-size:32pt;font-weight:400">Hang Su</h1>
+    <div class="row">
 
-					<!-- ABOUT SECTION --> 				
- 					<div>
- 						<p>
-						I'm a 6th year PhD student in the <a href="http://vis-www.cs.umass.edu/">Computer Vision Lab</a> at UMass Amherst, advised by <a href="https://people.cs.umass.edu/~elm/">Prof. Erik Learned-Miller</a> and <a href="https://people.cs.umass.edu/~smaji/">Prof. Subhransu Maji</a>. I work in the areas of computer vision and computer graphics, and in particular, I am interested in bringing together the strengths of 2D and 3D visual information for learning richer and more flexible representations. I obtained my master's degree from Brown University and my bachelor's degree from Peking University. 
- 						</p>
- 					</div>
- 					<!-- END ABOUT SECTION --> 	
- 				
- 					<!-- PROJECT SECTION --> 				
- 					<div>
- 						<h2>Publications</h2>
-							<h4  class="myanchor" id="pac"><img src="img/new.png" height=24px> <a href="pac/index.html">Pixel Adaptive Convolution</a></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/pac.png"><img class="img-thumbnail" src="img/pac.png" width="175" alt="PAC"></a></div> 						
-								<div class="col-sm-8">
-									<p>PAC is a content-adaptive operation that generalizes standard convolution and bilateral filters. </p>
-									<p><a href="pac/index.html">[project page]</a> <a href="https://youtu.be/gsQZbHuR64o">[video]</a></p>
-									<hr>								
-									<p>Hang Su, Varun Jampani, Deqing Sun, Orazio Gallo, Erik Learned-Miller, and Jan Kautz, &quot;<strong>Pixel Adaptive Convolutional Neural Networks</strong>&quot;, <i>CVPR 2019 (to appear)</i>.
-									</p>
-								</div> 			
- 							</div>							
-							<h4  class="myanchor" id="splatnet"><a href="splatnet/index.html">SPLATNet: Sparse Lattice Networks for Point Cloud Processing</a></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/splatnet_teaser.png"><img class="img-thumbnail" src="img/splatnet_teaser.png" width="175" alt="SPLATNET"></a></div> 						
-								<div class="col-sm-8">
-									<p>A fast and end-to-end trainable neural network that directly works on point clouds and can also do joint 2D-3D processing.</p>
-<p style="color:#DE4E2F">Awarded "Best Paper Honorable Mention" at CVPR'18!</p>
-<p style="color:#DE4E2F">NVAIL Pioneering Research Award</p>
-									<p><a href="splatnet/index.html">[project page]</a>  <a href="https://youtu.be/x18WUuBNK7E?t=5m32s">[video]</a>  <a href="https://arxiv.org/abs/1802.08275">[arXiv]</a>  <a href="https://github.com/NVlabs/splatnet">[GitHub]</a></p>
-									
-									<hr>								
-									<p>Hang Su, Varun Jampani, Deqing Sun, Subhransu Maji, Evangelos Kalogerakis, Ming-Hsuan Yang, and Jan Kautz, &quot;<strong>SPLATNet: Sparse Lattice Networks for Point Cloud Processing</strong>&quot;, <i>CVPR 2018 (oral)</i>.
-									</p>
-								</div> 			
- 							</div>							
-							<h4  class="myanchor" id="erdosrenyi"><a href="https://sites.google.com/site/erclustering/">End-to-end Face Detection and Cast Grouping in Movies Using Erdős–Rényi Clustering</a></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/hannah.png"><img class="img-thumbnail" src="img/hannah_teaser.png" width="175" alt="erdos-renyi"></a></div> 						
-								<div class="col-sm-8">
-									<p>An end-to-end system for detecting  and clustering faces by identity in full-length  movies.</p>
-									<p><a href="https://sites.google.com/site/erclustering/">[project page]</a>  <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Jin_End-To-End_Face_Detection_ICCV_2017_paper.pdf">[pdf]</a>  <a href="https://github.com/souyoungjin/erclustering">[code]</a></p>
-									<hr>									
-									<p>SouYoung Jin, Hang Su, Chris Stauffer, and Erik Learned-Miller, &quot;<strong>End-to-end face detection and cast grouping in movies using Erdős–Rényi clustering</strong>&quot;, <i>ICCV 2017 (splotlight)</i>.
-									</p>
-								</div> 			
- 							</div>
- 							<h4  class="myanchor" id="mvcnn"><a href="http://vis-www.cs.umass.edu/mvcnn/">Multi-view CNN (MVCNN) for 3D Shape Recognition</a></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/mvcnn.png"><img class="img-thumbnail" src="img/mvcnn_teaser.png" width="175" alt="MVCNN architecture"></a></div> 						
-								<div class="col-sm-8">
-									<p>A novel CNN architecture that combines information from multiple views of a 3D shape into a single and compact shape descriptor offering state-of-the-art performance in a range of recognition tasks. </p>
-									<p style="color:#DE4E2F">Ranked #1 in <a href="https://shapenet.cs.stanford.edu/shrec16/" style="color:#DE4E2F">a SHREC'16 contest</a>!</p>
-									<p><a href="https://www.youtube.com/watch?v=P0ivrbPjvnM">[video]</a>  <a href="http://vis-www.cs.umass.edu/mvcnn/">[project page]</a>  <a href="https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.pdf">[pdf]</a>  <a href="https://github.com/suhangpro/mvcnn">[code]</a></p>
-									<hr>																											
-									<p>Hang Su, Subhransu Maji, Evangelos Kalogerakis, and Erik Learned-Miller, &quot;<strong>Multi-view Convolutional Neural Networks for 3D Shape Recognition</strong>&quot;, <i>ICCV 2015</i>.
-									</p>
-									<p>M. Savva, F. Yu, H. Su, M. Aono, B. Chen, D. Cohen-Or, W. Deng, H. Su, S. Bai, X. Bai, N. Fish, J. Han, E. Kalogerakis, E. G. Learned-Miller, Y. Li, M. Liao, S. Maji, A. Tatsuma, Y. Wang, N. Zhang, and Z. Zhou, &quot;<strong>SHREC’16 Track: Large-Scale 3D Shape Retrieval from ShapeNet Core55</strong>&quot;, <i>Eurographics Workshop on 3D Object Retrieval, J. Jorge and M. Lin, editors, 2016</i>.
-									</p>
-								</div> 			
- 							</div>
- 							<h4  class="myanchor" id="scene-attr"><a href="#scene-attr">The SUN Attribute Database: Beyond Categories for Deeper Scene Understanding</a></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/attributes.png"><img class="img-thumbnail" src="img/attributes.png" width="175" alt="Scene Attributes"></a></div> 						
-								<div class="col-sm-8">
-									<p>The first large-scale scene attribute database.</p>
-									<p><a href="http://cs.brown.edu/~gen/pub_papers/sun_attributes_ijcv.pdf">[pdf]</a></p>
-									<hr>
-									<p>G. Patterson, C. Xu, H. Su, J. Hays, &quot;<strong>The SUN Attribute Database: Beyond Categories for Deeper Scene Understanding</strong>&quot;, <i>IJCV, May 2014</i>.
-								</div> 			
- 							</div>
-						
-						<h2>Earlier Projects</h2>
-							<h4  class="myanchor" id="gloc">Layered Global-Local (GLOC) Model for Image Parts Labelling with Occlusion <small>2014</small></h4> 
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/gloc.png"><img class="img-thumbnail" src="img/gloc.png" width="175" alt="Global-Local Occlusion Model"></a></div> 						
-								<div class="col-sm-8">
-									<p>Learning and reasoning visual occlusions (e.g. on faces) using a deep graphical model. Co-advised by <a href="http://people.cs.umass.edu/~kalo/">Professor Vangelis Kalogerakis</a> and <a href="http://people.cs.umass.edu/~elm/">Professor Erik Learned-Miller.</a> 
-									</p>
-									<p>We create an extension to <a href="http://vis-www.cs.umass.edu/lfw/part_labels/">LFW Part Labels</a> dataset. It provides 7 part labels to 2,927 portrait photos. </p>
-									<p><a href="https://github.com/suhangpro/lfw-parts-v2">[data]</a> (lfw-parts-v2)</p>
-								</div> 			
-								
- 							</div>
- 							<h4  class="myanchor" id="face-detection">Face & Pose Detection Using Deformable Part-based Model <small>2012 Summer (@<a href="http://www.eharmony.com/">eHarmony</a>)</small></h4>
- 							<div class="row project-item" style="font-size:100%">
-									<div class="col-sm-4"><a href="img/faces.png"><img class="img-thumbnail" src="img/faces.png" width="175" alt="Face Detection"></a></div> 						
-									<div class="col-sm-8">
-										<p>In this project, I implemented in C++ a human face and body detection system based on the paper "Face detection, pose estimation and landmark localization in the wild" (<i>X. Zhu and D. Ramanan</i>, CVPR 2012). 
-										The implementation achieves 0.95 recall and 0.90 precision on eHarmony’s user proﬁle photos.</p>
-										<p><a href="https://github.com/suhangpro/dpm-face">[code]</a> </p>
-									</div> 			
- 							</div>
- 							<h4  class="myanchor" id="photo-quality">Photo Quality Assessment on User Proﬁle Photos <small>2012</small></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a><img class="img-thumbnail" src="img/quality_smoothness.jpg" width="175" alt="Photo Quality Assessment"></a></div> 						
-								<div class="col-sm-8">
-									<p>The goal of this project is to automatically distinguish high quality 
-									professional photos from low quality snapshots.</p>
-									<p>We focus on assessing the quality of photos which contain faces (e.g. user profile photos). We propose several image features particularly useful for this task, e.g. skin smoothness, composition, bokeh. Experiments show that with small modifications they are also useful for assessing other types of photos.</p>
-									<!--<p><a href="https://db.tt/SrfWg7CT">[report]</a></p>
+        <!-- SIDE INFO SECTION -->
+        <div class="col-sm-3 side pull-right" style="font-size:100%" id="sideinfo">
+            <a href=""><img src="img/quabbin2.png" width="225" alt="My face" class="img-thumbnail"></a>
+            <h4>Contact</h4>
+            <dl>
+                <dt>Office</dt>
+                <dd>256 CS Bldg.<br>
+                    140 Governors Dr.<br>
+                    Amherst, MA 01003
+                </dd>
+                <dt>Email</dt>
+                <dd><img src="img/email-crayon.png" height=16px style="padding-bottom:4px;padding-left:0px">
+                </dd>
+            </dl>
+            <!--
+             <h4>Resume</h4>
+             <dl>
+                 <dd><a href="https://www.dropbox.com/s/4k7gbi8ntejdryb/resume.pdf?dl=0">[pdf]</a></dd>
+             </dl>
+            -->
+            <h4>Links</h4>
+            <ul class="list-inline">
+                <li><a href="https://www.dropbox.com/s/4k7gbi8ntejdryb/resume.pdf?dl=0">CV</a>
+                    <p style="color:#DE4E2F;display:inline"> <img src="img/red-left-arrow.png" height=16px style="padding-bottom:4px;padding-left:5px"> MORE INFO!</p></li>
+                <br/>
+                <li><a href="https://scholar.google.com/citations?user=CCFN2YwAAAAJ&hl=en">Google Scholar</a></li>
+                <br/>
+                <li><a href="https://github.com/suhangpro">GitHub</a></li>
+                <br/>
+                <li><a href="http://www.linkedin.com/in/hangs/">LinkedIn</a></li>
+            </ul>
+            <h4 style="padding-top: 6px;">Meet Eclipse<img src="img/black-down-arrow.png" height=18px style="padding-left:5px"></h4>
+            <a href="https://goo.gl/photos/SEzbqEsgrKDbyWfx7"><img src="http://pctm.pitapata.com/mb4jm4.png" width="200"
+                                                                   height="80" border="0"
+                                                                   alt="PitaPata Cat tickers"/></a>
+            <!-- TWEETS
+            <div>
+                <a class="twitter-timeline" href="https://twitter.com/suhangpro" data-widget-id="439775337375735809">Tweets by @suhangpro</a>
+               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+           </div>
+           TWEETS -->
+        </div>
+        <!-- END SIDE INFO SECTION -->
+
+        <!-- MAIN PANEL -->
+        <div class="col-sm-9 main pull-left">
+            <h1 class="myanchor pagetitle" style="font-size:32pt;font-weight:400">Hang Su</h1>
+
+            <!-- ABOUT SECTION -->
+            <div class="sec">
+                <p>
+                    I'm a 6th year PhD student in the <a href="http://vis-www.cs.umass.edu/">Computer Vision Lab</a> at
+                    UMass Amherst, advised by <a href="https://people.cs.umass.edu/~elm/">Prof. Erik Learned-Miller</a>
+                    and <a href="https://people.cs.umass.edu/~smaji/">Prof. Subhransu Maji</a>. I work in the areas of
+                    computer vision and computer graphics, and in particular, I am interested in bringing together the
+                    strengths of 2D and 3D visual information for learning richer and more flexible representations. I
+                    obtained my master's degree from Brown University and my bachelor's degree from Peking University.
+                </p>
+            </div>
+            <!-- END ABOUT SECTION -->
+
+            <!-- NEWS SECTION -->
+            <div class="sec">
+                <h2 style="font-weight:lighter"> Recent & Upcoming</h2>
+                <dl class="row">
+                    <dt class="col-sm-2">06/16/19</dt>
+                    <dd class="col-sm-10">Talk at CVPR tutorial on <a href="https://xiaolonw.github.io/graphnn/">Learning
+                        Representations via Graph-structured Networks</a>.
+                    </dd>
+                    <dt class="col-sm-2">04/26/19</dt>
+                    <dd class="col-sm-10">Invited talk at <a href="https://www.isee.ai/">ISEE</a>.</dd>
+                    <dt class="col-sm-2">03/11/19</dt>
+                    <dd class="col-sm-10">Our paper on <a href="#pac">PACNet</a> accepted to CVPR 2019.</dd>
+                </dl>
+            </div>
+            <!-- NEWS SECTION -->
+
+            <!-- PROJECT SECTION -->
+            <div class="sec">
+                <h2 style="font-weight:lighter">Publications</h2>
+                <h4 class="myanchor" id="pac"><img src="img/new.png" height=24px> <a href="pac/index.html">Pixel
+                    Adaptive Convolution</a></h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/pac.png"><img class="img-thumbnail" src="img/pac.png" width="175"
+                                                                     alt="PAC"></a></div>
+                    <div class="col-sm-8">
+                        <p>PAC is a content-adaptive operation that generalizes standard convolution and bilateral
+                            filters. </p>
+                        <p><a href="pac/index.html" class="btnlink">project page</a> <a
+                                href="https://youtu.be/gsQZbHuR64o" class="btnlink">video</a> <a href="http://arxiv.org/abs/1904.05373" class="btnlink">arXiv</a></p>
+                        <p class="pub">Hang Su, Varun Jampani, Deqing Sun, Orazio Gallo, Erik Learned-Miller, and Jan Kautz,
+                            &quot;<strong>Pixel-Adaptive Convolutional Neural Networks</strong>&quot;, <i>CVPR 2019 (to
+                                appear)</i>.
+                        </p>
+                    </div>
+                </div>
+                <h4 class="myanchor" id="splatnet"><a href="splatnet/index.html">SPLATNet: Sparse Lattice Networks for
+                    Point Cloud Processing</a></h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/splatnet_teaser.png"><img class="img-thumbnail"
+                                                                                 src="img/splatnet_teaser.png"
+                                                                                 width="175" alt="SPLATNET"></a></div>
+                    <div class="col-sm-8">
+                        <p>A fast and end-to-end trainable neural network that directly works on point clouds and can
+                            also do joint 2D-3D processing.</p>
+                        <p style="color:#DE4E2F">Awarded "Best Paper Honorable Mention" at CVPR'18!</p>
+                        <p style="color:#DE4E2F">NVAIL Pioneering Research Award</p>
+                        <p><a href="splatnet/index.html" class="btnlink">project page</a>
+                            <a href="https://youtu.be/x18WUuBNK7E?t=5m32s" class="btnlink">video</a>
+                            <a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Su_SPLATNet_Sparse_Lattice_CVPR_2018_paper.pdf" class="btnlink">pdf</a>
+                            <a href="https://arxiv.org/abs/1802.08275" class="btnlink">arXiv</a>
+                            <a href="https://github.com/NVlabs/splatnet" class="btnlink">code</a>
+                        </p>
+
+                        <p class="pub">Hang Su, Varun Jampani, Deqing Sun, Subhransu Maji, Evangelos Kalogerakis, Ming-Hsuan Yang,
+                            and Jan Kautz, &quot;<strong>SPLATNet: Sparse Lattice Networks for Point Cloud
+                                Processing</strong>&quot;, <i>CVPR 2018 (oral)</i>.
+                        </p>
+                    </div>
+                </div>
+                <h4 class="myanchor" id="erdosrenyi"><a href="https://sites.google.com/site/erclustering/">End-to-end
+                    Face Detection and Cast Grouping in Movies Using Erdős–Rényi Clustering</a></h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/hannah.png"><img class="img-thumbnail"
+                                                                        src="img/hannah_teaser.png" width="175"
+                                                                        alt="erdos-renyi"></a></div>
+                    <div class="col-sm-8">
+                        <p>An end-to-end system for detecting and clustering faces by identity in full-length
+                            movies.</p>
+                        <p>
+                            <a href="https://sites.google.com/site/erclustering/" class="btnlink">project page</a>
+                            <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Jin_End-To-End_Face_Detection_ICCV_2017_paper.pdf" class="btnlink">pdf</a>
+                            <a href="https://arxiv.org/abs/1709.02458" class="btnlink">arXiv</a>
+                            <a href="https://github.com/souyoungjin/erclustering" class="btnlink">code</a>
+                        </p>
+                        <p class="pub">SouYoung Jin, Hang Su, Chris Stauffer, and Erik Learned-Miller, &quot;<strong>End-to-end face
+                            detection and cast grouping in movies using Erdős–Rényi clustering</strong>&quot;, <i>ICCV
+                            2017 (splotlight)</i>.
+                        </p>
+                    </div>
+                </div>
+                <h4 class="myanchor" id="mvcnn"><a href="http://vis-www.cs.umass.edu/mvcnn/">Multi-view CNN (MVCNN) for
+                    3D Shape Recognition</a></h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/mvcnn.png"><img class="img-thumbnail" src="img/mvcnn_teaser.png"
+                                                                       width="175" alt="MVCNN architecture"></a></div>
+                    <div class="col-sm-8">
+                        <p>A novel CNN architecture that combines information from multiple views of a 3D shape into a
+                            single and compact shape descriptor offering state-of-the-art performance in a range of
+                            recognition tasks. </p>
+                        <p style="color:#DE4E2F">Ranked #1 in <a href="https://shapenet.cs.stanford.edu/shrec16/"
+                                                                 style="color:#DE4E2F">a SHREC'16 contest</a>!</p>
+                        <p>
+                            <a href="http://vis-www.cs.umass.edu/mvcnn/" class="btnlink">project page</a>
+                            <a href="https://www.youtube.com/watch?v=P0ivrbPjvnM" class="btnlink">video</a>
+                            <a href="https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.pdf" class="btnlink">pdf</a>
+                            <a href="https://arxiv.org/abs/1505.00880" class="btnlink">arXiv</a>
+                            <a href="https://github.com/suhangpro/mvcnn" class="btnlink">code</a></p>
+                        <p class="pub">Hang Su, Subhransu Maji, Evangelos Kalogerakis, and Erik Learned-Miller, &quot;<strong>Multi-view
+                            Convolutional Neural Networks for 3D Shape Recognition</strong>&quot;, <i>ICCV 2015</i>.
+                        </p>
+                        <!--
+                        <p class="pub">M. Savva, F. Yu, H. Su, M. Aono, B. Chen, D. Cohen-Or, W. Deng, H. Su, S. Bai, X. Bai, N.
+                            Fish, J. Han, E. Kalogerakis, E. G. Learned-Miller, Y. Li, M. Liao, S. Maji, A. Tatsuma, Y.
+                            Wang, N. Zhang, and Z. Zhou, &quot;<strong>SHREC’16 Track: Large-Scale 3D Shape Retrieval
+                                from ShapeNet Core55</strong>&quot;, <i>Eurographics Workshop on 3D Object Retrieval, J.
+                                Jorge and M. Lin, editors, 2016</i>.
+                        </p>
+                        -->
+                        <p class="pub">M. Savva, et al., &quot;<strong>SHREC’16 Track: Large-Scale 3D Shape Retrieval
+                                from ShapeNet Core55</strong>&quot;, <i>Eurographics Workshop on 3D Object Retrieval, 2016</i>.
+                        </p>
+                    </div>
+                </div>
+                <h4 class="myanchor" id="scene-attr"><a href="#scene-attr">The SUN Attribute Database: Beyond Categories
+                    for Deeper Scene Understanding</a></h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/attributes.png"><img class="img-thumbnail"
+                                                                            src="img/attributes.png" width="175"
+                                                                            alt="Scene Attributes"></a></div>
+                    <div class="col-sm-8">
+                        <p>The first large-scale scene attribute database.</p>
+                        <p><a href="https://www.dropbox.com/s/bxuzy2ve5qzc0t0/SUNAttributeIJCV2014.pdf?dl=0" class="btnlink">pdf</a></p>
+                        <p class="pub">G. Patterson, C. Xu, H. Su, J. Hays, &quot;<strong>The SUN Attribute Database: Beyond
+                            Categories for Deeper Scene Understanding</strong>&quot;, <i>IJCV, May 2014</i>.
+                    </div>
+                </div>
+            </div>
+            <div class="sec">
+                <h2 style="font-weight:lighter">Earlier Projects</h2>
+                <h4 class="myanchor" id="gloc">Layered Global-Local (GLOC) Model for Image Parts Labelling with
+                    Occlusion
+                    <small>2014</small>
+                </h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/gloc.png"><img class="img-thumbnail" src="img/gloc.png"
+                                                                      width="175"
+                                                                      alt="Global-Local Occlusion Model"></a></div>
+                    <div class="col-sm-8">
+                        <p>Learning and reasoning visual occlusions (e.g. on faces) using a deep graphical model.
+                            Co-advised by <a href="http://people.cs.umass.edu/~kalo/">Professor Vangelis Kalogerakis</a>
+                            and <a href="http://people.cs.umass.edu/~elm/">Professor Erik Learned-Miller.</a>
+                        </p>
+                        <p>We create an extension to <a href="http://vis-www.cs.umass.edu/lfw/part_labels/">LFW Part
+                            Labels</a> dataset. It provides 7 part labels to 2,927 portrait photos. </p>
+                        <p><a href="https://github.com/suhangpro/lfw-parts-v2" class="btnlink">data</a> (lfw-parts-v2)</p>
+                    </div>
+
+                </div>
+                <h4 class="myanchor" id="face-detection">Face & Pose Detection Using Deformable Part-based Model
+                    <small>2012 Summer (@<a href="http://www.eharmony.com/">eHarmony</a>)</small>
+                </h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/faces.png"><img class="img-thumbnail" src="img/faces.png"
+                                                                       width="175" alt="Face Detection"></a></div>
+                    <div class="col-sm-8">
+                        <p>In this project, I implemented in C++ a human face and body detection system based on the
+                            paper "Face detection, pose estimation and landmark localization in the wild" (<i>X. Zhu and
+                                D. Ramanan</i>, CVPR 2012).
+                            The implementation achieves 0.95 recall and 0.90 precision on eHarmony’s user proﬁle photos.
+                        </p>
+                        <p><a href="https://github.com/suhangpro/dpm-face" class="btnlink">code</a></p>
+                    </div>
+                </div>
+                <h4 class="myanchor" id="photo-quality">Photo Quality Assessment on User Proﬁle Photos
+                    <small>2012</small>
+                </h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a><img class="img-thumbnail" src="img/quality_smoothness.jpg" width="175"
+                                                  alt="Photo Quality Assessment"></a></div>
+                    <div class="col-sm-8">
+                        <p>The goal of this project is to automatically distinguish high quality
+                            professional photos from low quality snapshots.</p>
+                        <p>We focus on assessing the quality of photos which contain faces (e.g. user profile photos).
+                            We propose several image features particularly useful for this task, e.g. skin smoothness,
+                            composition, bokeh. Experiments show that with small modifications they are also useful for
+                            assessing other types of photos.</p>
+                        <!--<p><a href="https://db.tt/SrfWg7CT">[report]</a></p>
 -->
-								</div> 			
- 							</div>
- 							<h4  class="myanchor" id="car-detection">Front Vehicle Detection Using Onboard Camera <small>2010-2011</small></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/car_detection.png"><img class="img-thumbnail" src="img/car_detection.png" width="175" alt="Vehicle Detection & Road Segmentation"></a></div> 						
-								<div class="col-sm-8">
-									<p>Onboard vehicle detection plays a key role in collision prevention and autonomous driving. Camera-based detection techniques have been proven effective and economical, and show wide application prospect.</p>
-									<p>This project focuses on front vehicle detection using onboard cameras. Hypothesis generation based on shadows and hypothesis verification based on HOG features are combined to achieve a real-time system. We also introduce and integrate a passing vehicle detection component using optical flow, as well as road surface segmentation. </p>
-								</div> 			
- 							</div>
- 							<h4  class="myanchor" id="3d-model">3D Modelling of Peking University Campus <small>2008</small></h4>
- 							<div class="row project-item" style="font-size:100%">
-								<div class="col-sm-4"><a href="img/sketchup.jpg"><img class="img-thumbnail" src="img/sketchup.jpg" width="175" alt="One of the 3D models"></a></div> 						
-								<div class="col-sm-8">
-									<p>With almost 100 beautifully modeled 3D buildings on Peking University campus, our team won the top prize in <a href="https://3dwarehouse.sketchup.com/collection/2d5e8dfbfd5d9985bdac737426f6915/Winners-Collection-2008-Google-International-Model-Your-Campus-Competition">2008 Google International Model Your Campus Competition</a>.</p>
-								</div> 			
- 							</div>
- 					</div>
- 					<!-- END PROJECT SECTION --> 	
- 				
- 					<!-- CALENDAR SECTION --> 	
- 					<div  class="myanchor" id="mycalendar">
- 						<h2>My Calendar</h2>
- 						<div class="calendar-container">
- 							<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=450&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=aqmddp31t3bd93gdv2i7ve08mo%40group.calendar.google.com&amp;color=%23B1440E&amp;src=suhangpro%40gmail.com&amp;color=%23182C57&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="450" frameborder="0" scrolling="no"></iframe>
- 						</div>
- 					</div>
- 					<!-- END CALENDAR SECTION --> 	
- 				
- 				</div>
- 				<!-- END MAIN PANEL -->
- 			
- 			</div>
-		</div>
-	
-		<!-- bottom navbar-->
-		<div class = "navbar navbar-default navbar-static-bottom">
-			<div class = "container">
- 				<p class = "navbar-text pull-left">Powered by <a href="http://getbootstrap.com/">Bootstrap</a> | Last Updated: 2019-04-02</p>
-      	</div>
-		</div>
-		<!-- END bottom navbar-->
-	
-		<!-- Bootstrap core JavaScript
-    	================================================== -->
-    	<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
+                    </div>
+                </div>
+                <h4 class="myanchor" id="car-detection">Front Vehicle Detection Using Onboard Camera
+                    <small>2010-2011</small>
+                </h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/car_detection.png"><img class="img-thumbnail"
+                                                                               src="img/car_detection.png" width="175"
+                                                                               alt="Vehicle Detection & Road Segmentation"></a>
+                    </div>
+                    <div class="col-sm-8">
+                        <p>Onboard vehicle detection plays a key role in collision prevention and autonomous driving.
+                            Camera-based detection techniques have been proven effective and economical, and show wide
+                            application prospect.</p>
+                        <p>This project focuses on front vehicle detection using onboard cameras. Hypothesis generation
+                            based on shadows and hypothesis verification based on HOG features are combined to achieve a
+                            real-time system. We also introduce and integrate a passing vehicle detection component
+                            using optical flow, as well as road surface segmentation. </p>
+                    </div>
+                </div>
+                <h4 class="myanchor" id="3d-model">3D Modelling of Peking University Campus
+                    <small>2008</small>
+                </h4>
+                <div class="row project-item" style="font-size:100%">
+                    <div class="col-sm-4"><a href="img/sketchup.jpg"><img class="img-thumbnail" src="img/sketchup.jpg"
+                                                                          width="175" alt="One of the 3D models"></a>
+                    </div>
+                    <div class="col-sm-8">
+                        <p>With almost 100 beautifully modeled 3D buildings on Peking University campus, our team won
+                            the top prize in <a
+                                    href="https://3dwarehouse.sketchup.com/collection/2d5e8dfbfd5d9985bdac737426f6915/Winners-Collection-2008-Google-International-Model-Your-Campus-Competition">2008
+                                Google International Model Your Campus Competition</a>.</p>
+                        <p>
+                            <a class="btnlink" href="https://3dwarehouse.sketchup.com/collection/2d5e8dfbfd5d9985bdac737426f6915/Winners-Collection-2008-Google-International-Model-Your-Campus-Competition">project page</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- END PROJECT SECTION -->
+
+            <!-- CALENDAR SECTION -->
+            <div class="sec myanchor" id="mycalendar">
+                <h2 style="font-weight:lighter">My Calendar</h2>
+                <div class="calendar-container">
+                    <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=450&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=aqmddp31t3bd93gdv2i7ve08mo%40group.calendar.google.com&amp;color=%23B1440E&amp;src=suhangpro%40gmail.com&amp;color=%23182C57&amp;ctz=America%2FNew_York"
+                            style=" border-width:0 " width="800" height="450" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+            <!-- END CALENDAR SECTION -->
+
+        </div>
+        <!-- END MAIN PANEL -->
+
+    </div>
+</div>
+
+<!-- bottom navbar-->
+<div class="navbar navbar-default navbar-static-bottom">
+    <div class="container">
+        <p class="navbar-text pull-left">Powered by <a href="http://getbootstrap.com/">Bootstrap</a> | Last Updated:
+            2019-04-10</p>
+    </div>
+</div>
+<!-- END bottom navbar-->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -2,6 +2,34 @@ body{
     font-family: "Ubuntu", Helvetica, Arial, sans-serif!important;
 }
 
+
+.sec{
+    padding-bottom: 1px;
+}
+
+.pub{
+    outline-style: dashed;
+    outline-color: silver;
+    outline-width: 1px;
+    padding: 8px;
+    margin-top: 20px;
+    background-color: #FAFBFB;
+}
+
+.btnlink{
+    background-color: #428bcb;
+    padding: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+.btnlink:hover{
+    background-color: #D2691E;
+    padding: 2px;
+    color: white;
+    text-decoration: none;
+}
+
 body {
   padding-top: 50px;
   text-align: justify;

@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Pixel Adaptive Convolution Neural Networks</title>
+<title>Pixel-Adaptive Convolution Neural Networks</title>
 <link href="pac.css" rel="stylesheet" type="text/css">
 <style type="text/css" media="all">
 img#network {
@@ -36,7 +36,7 @@ TEXT-ALIGN: center
   <div id="content">
     <div id='head'>
       <center>
-	<h1>Pixel Adaptive Convolutional Neural Networks</h1>
+	<h1>Pixel-Adaptive Convolutional Neural Networks</h1>
       </center>
     </div>
 
@@ -65,15 +65,15 @@ TEXT-ALIGN: center
 	       <a href="https://research.nvidia.com/person/orazio-gallo">Orazio Gallo</a> and 
 	       <a href="http://people.cs.umass.edu/~elm/">Erik Learned-Miller</a> and 
 	       <a href="http://jankautz.com/">Jan Kautz</a>},
-  title     = {Pixel Adaptive Convolutional Neural Networks},
+  title     = {Pixel-Adaptive Convolutional Neural Networks},
   booktitle = {Proceedings of the IEEE Conference on Computer 
                Vision and Pattern Recognition (CVPR)},
   year      = {2019}
 }
 </pre>
 <hr style="border-top: dotted 1px;" />
-    <h2>Downloads</h2>
-<p><a href="">[paper]</a> (coming soon) <a href="">[code]</a> (coming soon)</p>
+    <h2>Resources</h2>
+<p><a href="http://arxiv.org/abs/1904.05373">[paper]</a> <a href="">[code]</a> (coming soon)</p>
 
 <hr style="border-top: dotted 1px;" />
     <h2>Summary</h2>
@@ -86,7 +86,7 @@ alternative to fully-connected CRF (Full-CRF), called PAC-CRF,
 which performs competitively, while being considerably faster. In addition, we also demonstrate that PAC can be used as a drop-in replacement for convolution layers in pre-trained networks, resulting in consistent performance improvements.
     </p>
 <hr style="border-top: dotted 1px;" />
-    <h2>Pixel Adaptive Convolution</h2>
+    <h2>Pixel-Adaptive Convolution</h2>
 
 <b>General formula of PAC</b>
  $$\hat{\mathbf{I}}_p = \frac{1}{Z}\sum_{q \in nbr(p)} \mathbf{I}_q M_q W(q-p) K(\mathbf{f}_p, \mathbf{f}_q) + \mathbf{b}$$
@@ -127,7 +127,7 @@ which performs competitively, while being considerably faster. In addition, we a
 </p>
 </ul>
 <hr style="border-top: dotted 1px;" />
-     <h2>Acknowledgements</h2> We acknowledge support from AFRL and DARPA (agreement# FA8750-18-2-0126) and the MassTech Collaborative grant for funding the UMass GPU cluster.
+     <h2>Acknowledgements</h2> Hang Su and Erik Learned-Miller acknowledge support from AFRL and DARPA (agreement# FA8750-18-2-0126) and the MassTech Collaborative grant for funding the UMass GPU cluster.
 <hr style="border-top: dotted 1px;" />
      <h2>References</h2>
      <ul>
