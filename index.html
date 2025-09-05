@@ -16,6 +16,202 @@
 
     <!-- Custom styles for this template -->
     <link href="css/styles.css" rel="stylesheet">
+    
+    <!-- Custom layout styles -->
+    <style>
+        /* Mobile: Stack sidebar above content */
+        @media (max-width: 800px) {
+            #sideinfo {
+                position: static !important;
+                width: 100% !important;
+                right: auto !important;
+                top: auto !important;
+                margin-bottom: 30px !important;
+                text-align: center;
+            }
+            .main-wrapper {
+                padding-right: 0 !important;
+            }
+        }
+        
+        /* Medium screens: Conservative side-by-side layout */
+        @media (min-width: 801px) and (max-width: 1199px) {
+            #sideinfo {
+                position: fixed !important;
+                top: 80px !important;
+                width: 240px !important;
+                z-index: 100 !important;
+                right: 15px !important;
+                text-align: center !important;
+            }
+            
+            .main-wrapper {
+                padding-right: 270px !important;
+            }
+            
+            .main-container {
+                max-width: 500px !important;
+                margin: 0 auto !important;
+            }
+        }
+        
+        /* Large screens: Balanced layout */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            #sideinfo {
+                position: fixed !important;
+                top: 80px !important;
+                width: 250px !important;
+                z-index: 100 !important;
+                right: max(20px, calc((100vw - 1100px) / 2)) !important;
+                text-align: center !important;
+            }
+            
+            .main-wrapper {
+                padding-right: max(280px, calc((100vw - 1100px) / 2 + 260px)) !important;
+            }
+            
+            .main-container {
+                max-width: 700px !important;
+                margin: 0 auto !important;
+            }
+        }
+        
+        /* Very large screens: Optimal positioning */
+        @media (min-width: 1400px) {
+            #sideinfo {
+                position: fixed !important;
+                top: 80px !important;
+                width: 250px !important;
+                z-index: 100 !important;
+                right: calc((100vw - 800px) / 2 - 280px) !important;
+                text-align: center !important;
+            }
+            
+            .main-wrapper {
+                padding-right: 0 !important;
+            }
+            
+            .main-container {
+                max-width: 800px !important;
+                margin: 0 auto !important;
+            }
+        }
+        
+        /* Desktop project thumbnail responsiveness */
+        @media (min-width: 801px) {
+            .project-item .col-sm-4 {
+                text-align: center !important;
+                display: flex !important;
+                align-items: flex-start !important;
+                justify-content: center !important;
+            }
+            
+            .project-thumbnail {
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            .project-thumbnail img {
+                width: 100% !important;
+                max-width: 200px !important;
+                height: auto !important;
+                margin: 0 auto !important;
+                display: block !important;
+                object-fit: contain !important;
+            }
+        }
+        
+        /* Mobile project thumbnail responsiveness */
+        @media (max-width: 800px) {
+            .project-item {
+                display: flex !important;
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            
+            .project-item .col-sm-4 {
+                width: 100% !important;
+                margin-bottom: 20px !important;
+                padding: 0 !important;
+            }
+            
+            .project-item .col-sm-8 {
+                width: 100% !important;
+                text-align: left !important;
+            }
+            
+            .project-thumbnail img {
+                width: 100% !important;
+                height: auto !important;
+                max-height: 50vw !important; /* Height cannot exceed 50% of viewport width - applies to all project images */
+                max-width: 100% !important;
+                object-fit: contain !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+        }
+        
+        /* Green theme for normal text links only - exclude buttons and special elements */
+        .main p a,
+        .sec p a,
+        .pub a,
+        #sideinfo a {
+            color: #2e7d32 !important;
+            text-decoration: none !important;
+        }
+        
+        .main p a:hover,
+        .sec p a:hover,
+        .pub a:hover,
+        #sideinfo a:hover {
+            color: #1b5e20 !important;
+            text-decoration: underline !important;
+        }
+        
+        .main p a:visited,
+        .sec p a:visited,
+        .pub a:visited,
+        #sideinfo a:visited {
+            color: #388e3c !important;
+        }
+        
+        /* Exclude styled elements from green theme */
+        .btnlink,
+        .award-highlight a {
+            color: initial !important;
+        }
+        
+        /* White text for navigation bar */
+        .navbar-inverse .navbar-nav > li > a {
+            color: #ffffff !important;
+        }
+        
+        .navbar-inverse .navbar-nav > li > a:hover,
+        .navbar-inverse .navbar-nav > li > a:focus {
+            color: #f0f0f0 !important;
+        }
+        
+        .navbar-inverse .navbar-nav > .active > a,
+        .navbar-inverse .navbar-nav > .active > a:hover,
+        .navbar-inverse .navbar-nav > .active > a:focus {
+            color: #ffffff !important;
+        }
+        
+        .navbar-inverse .navbar-nav > .dropdown > a .caret {
+            border-top-color: #ffffff !important;
+            border-bottom-color: #ffffff !important;
+        }
+        
+        .dropdown-menu > li > a {
+            color: #333 !important;
+        }
+        
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus {
+            color: #262626 !important;
+            background-color: #f5f5f5 !important;
+        }
+    </style>
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]>
@@ -48,17 +244,25 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#pac" data-target=".navbar-collapse">PAC</a></li>
-                        <li><a href="#hnh" data-target=".navbar-collapse">Half&Half</a></li>
-                        <li><a href="#splatnet" data-target=".navbar-collapse">SPLATNet</a></li>
-                        <li><a href="#erdosrenyi" data-target=".navbar-collapse">Face Clustering</a></li>
-                        <li><a href="#mvcnn" data-target=".navbar-collapse">MVCNN</a></li>
-                        <li><a href="#scene-attr">Scene Attributes</a></li>
-                        <li><a href="#gloc" data-target=".navbar-collapse">GLOC Occlusion</a></li>
-                        <li><a href="#face-detection">Face & Body Detection</a></li>
-                        <li><a href="#photo-quality">Photo Quality Assessment</a></li>
-                        <li><a href="#car-detection">Vehicle Detection</a></li>
-                        <li><a href="#3d-model">3D Modelling</a></li>
+                        <li class="research-project"><a href="#l4p" data-target=".navbar-collapse">L4P: 4D Vision Perception</a></li>
+                        <li class="research-project"><a href="#zero-msf" data-target=".navbar-collapse">Monocular Scene Flow</a></li>
+                        <li class="research-project"><a href="#hybriddepth" data-target=".navbar-collapse">HybridDepth</a></li>
+                        <li class="research-project"><a href="#surround-view" data-target=".navbar-collapse">Surround View Synthesis</a></li>
+                        <li class="research-project"><a href="#blobgen3d" data-target=".navbar-collapse">BlobGEN-3D</a></li>
+                        <li class="research-project"><a href="#fova-depth" data-target=".navbar-collapse">FoVA-Depth</a></li>
+                        <li class="research-project"><a href="#nvtorchcam" data-target=".navbar-collapse">nvTorchCam</a></li>
+                        <li class="research-project"><a href="#mobile-ar-depth" data-target=".navbar-collapse">Mobile AR Depth</a></li>
+                        <li class="research-project"><a href="#pac" data-target=".navbar-collapse">Pixel-Adaptive Convolution</a></li>
+                        <li class="research-project"><a href="#hnh" data-target=".navbar-collapse">Half&Half</a></li>
+                        <li class="research-project"><a href="#splatnet" data-target=".navbar-collapse">SPLATNet</a></li>
+                        <li class="research-project"><a href="#erdosrenyi" data-target=".navbar-collapse">Face Clustering</a></li>
+                        <li class="research-project"><a href="#mvcnn" data-target=".navbar-collapse">MVCNN</a></li>
+                        <li class="research-project"><a href="#scene-attr">Scene Attributes</a></li>
+                        <li class="earlier-project"><a href="#gloc" data-target=".navbar-collapse">GLOC Occlusion</a></li>
+                        <li class="earlier-project"><a href="#face-detection">Face & Body Detection</a></li>
+                        <li class="earlier-project"><a href="#photo-quality">Photo Quality Assessment</a></li>
+                        <li class="earlier-project"><a href="#car-detection">Vehicle Detection</a></li>
+                        <li class="earlier-project"><a href="#3d-model">3D Modelling</a></li>
                     </ul>
                 </li>
                 <!--<li><a href="#mycalendar">Calendar</a></li>
@@ -69,22 +273,24 @@
 </div>
 <!-- END top navbar-->
 
-<div class="container">
-
-    <div class="row">
-
-        <!-- SIDE INFO SECTION -->
-        <div class="col-sm-3 side pull-right" style="font-size:100%" id="sideinfo">
-            <a href=""><img src="img/quabbin2.png" width="225" alt="My face" class="img-thumbnail"></a>
+<!-- SIDE INFO SECTION -->
+<div class="col-sm-3 side" id="sideinfo" style="position: fixed; top: 80px; right: 20px; width: 250px; z-index: 100;">
+            <a href="">
+                <picture>
+                    <source media="(min-width: 801px)" srcset="img/portrait_cat_long.jpg">
+                    <source media="(max-width: 800px)" srcset="img/portrait_cat_sq.jpg">
+                    <img src="img/portrait_cat_long.jpg" width="225" alt="My face" class="img-thumbnail">
+                </picture>
+            </a>
             <h4>Contact</h4>
             <dl>
-                <dt>Office</dt>
+                <dt style="font-size: 0.8em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Office</dt>
                 <dd>2 Technology Park Dr.<br>
                     NVIDIA<br>
                     Westford, MA 01886
                 </dd>
-                <dt>Email</dt>
-                <dd><img src="img/email-crayon.png" height=16px style="padding-bottom:4px;padding-left:0px">
+                <dt style="font-size: 0.8em; font-weight: normal; color: #999; text-transform: uppercase; letter-spacing: 0.5px;">Email</dt>
+                <dd><img src="img/email-crayon.png" height="16px" class="email-icon">
                 </dd>
             </dl>
             <!--
@@ -102,13 +308,13 @@
                     </li>
                 <br/>
 		    -->
-                <li><a href="https://scholar.google.com/citations?user=CCFN2YwAAAAJ&hl=en">Google Scholar</a></li>
+                <li><a href="https://scholar.google.com/citations?user=CCFN2YwAAAAJ&hl=en"><img src="img/Google_Scholar_logo.svg" height="16px" style="margin-right: 8px;">Google Scholar</a></li>
                 <br/>
-                <li><a href="https://github.com/suhangpro">GitHub</a></li>
+                <li><a href="https://github.com/suhangpro"><img src="img/Octicons-mark-github.svg" height="16px" style="margin-right: 8px;">GitHub</a></li>
                 <br/>
-                <li><a href="http://www.linkedin.com/in/hangs/">LinkedIn</a></li>
+                <li><a href="http://www.linkedin.com/in/hangs/"><img src="img/LinkedIn_icon.svg" height="16px" style="margin-right: 8px;">LinkedIn</a></li>
             </ul>
-            <h4 style="padding-top: 6px;">Meet Eclipse<img src="img/black-down-arrow.png" height=18px style="padding-left:5px"></h4>
+            <h4 class="eclipse-heading">Meet Eclipse<img src="img/black-down-arrow.png" height="18px" class="arrow-icon"></h4>
             <a href="https://goo.gl/photos/SEzbqEsgrKDbyWfx7"><img src="https://www.tickerfactory.com/ezt/d/4;54;467/st/20140401/e/Eclipse+was+born/dt/0/k/b853/s-event.png"width="200" height="80" border="0" alt="Cat tickers"/></a>
 
             <!-- TWEETS
@@ -117,12 +323,14 @@
                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
            </div>
            TWEETS -->
-        </div>
-        <!-- END SIDE INFO SECTION -->
+</div>
+<!-- END SIDE INFO SECTION -->
 
-        <!-- MAIN PANEL -->
-        <div class="col-sm-9 main pull-left">
-            <h1 class="myanchor pagetitle" style="font-size:32pt;font-weight:400">Hang Su</h1>
+<div class="main-wrapper">
+    <div class="container main-container" style="max-width: 800px; margin: 0 auto;">
+    <!-- MAIN PANEL -->
+    <div class="main" style="padding: 20px;">
+            <h1 class="myanchor pagetitle page-title">Hang Su</h1>
 
             <!-- ABOUT SECTION -->
             <div class="sec">
@@ -130,16 +338,12 @@
                     I'm a research scientist in the Learning and Perception Research (LPR) team at 
                     <a href="https://www.nvidia.com/en-us/research/">NVIDIA Research</a>. 
                     I completed my Ph.D. study in the <a href="http://vis-www.cs.umass.edu/">Computer Vision Lab</a> at 
-                    UMass Amherst, advised by <a href="https://people.cs.umass.edu/~elm/">Prof. Erik Learned-Miller</a>. 
-                    I obtained my master's degree in Computer Science from Brown University and my bachelor's degree in 
-                    Intelligent Science and Technology from Peking University. 
+                    UMass Amherst. Before that, I obtained my master's degree from Brown University and my bachelor's degree from Peking University. 
                 </p>
                 <p>
-                    I work in the areas of computer vision, 
-                    graphics, and machine learning, and in particular, I am interested in bringing together the strengths 
-                    of 2D and 3D visual information for learning richer and more flexible representations. 
+                    I work in the areas of computer vision, graphics, and deep learning. In particular, <em style="color: #2d7d32; font-weight: 600; border-bottom: 2px solid #c8e6c9; padding-bottom: 1px;">I am interested in bringing together the strengths of 2D, 3D and 4D visual perception, as well as equipping AI agents with visual information from all modalities</em>. 
                     Our work on 3D shape recognition won first place in the SHREC '16 Large-Scale 3D Shape Retrieval Contest, 
-                    and I am a recipient of a CVPR Best Paper Honorable Mention Award for our work on point cloud processing.
+                    and I received the CVPR Best Paper Honorable Mention Award for our work on point cloud processing and the CVPR Best Paper Award Candidate for our work on monocular scene flow estimation. 
                     
                     <!--
                     I'm a 6th year PhD student in the <a href="http://vis-www.cs.umass.edu/">Computer Vision Lab</a> at
@@ -154,6 +358,7 @@
             <!-- END ABOUT SECTION -->
 
             <!-- NEWS SECTION -->
+            <!--
             <div class="sec">
                 <h2 style="font-weight:lighter"> Recent & Upcoming</h2>
                 <dl class="row">
@@ -161,7 +366,7 @@
 		    <dd class="col-sm-10"><a href="https://arxiv.org/abs/2310.14437">One paper</a> accepted to HotMobile 2024. </dd>
                     <dt class="col-sm-2">10/15/23</dt>
 		    <dd class="col-sm-10"><a href="https://arxiv.org/abs/2401.13786">One paper</a> accepted to 3DV 2024. </dd>
-                    <!--
+                    
                     <dt class="col-sm-2">02/24/20</dt>
                     <dd class="col-sm-10">I joined NVIDIA as a <a href="https://research.nvidia.com/person/hang-su">research scientist</a>.</dd>
                     <dt class="col-sm-2">06/16/19</dt>
@@ -172,18 +377,150 @@
                     <dd class="col-sm-10">Our paper on <a href="#hnh">Half&Half Benchmarks</a> accepted to CVPR 2019 Workshop on Vision Meets Cognition.</dd>
                     <dt class="col-sm-2">03/11/19</dt>
                     <dd class="col-sm-10">Our paper on <a href="#pac">PACNet</a> accepted to CVPR 2019.</dd>
-                    -->
+                    
                 </dl>
             </div>
+            -->
             <!-- NEWS SECTION -->
 
             <!-- PROJECT SECTION -->
             <div class="sec">
-                <h2 style="font-weight:lighter">Publications</h2>
+                <h2 class="section-heading">Research Projects</h2>
                 <!--<img src="img/new.png" height=24px> between h4 and a for new pubs-->
+                
+                <h4 class="myanchor" id="l4p"><a href="https://research.nvidia.com/labs/lpr/l4p/">L4P: Low-level 4D Vision Perception Unified</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/snowboard_pc.gif" width="175" alt="L4P"></a></div>
+                    <div class="col-sm-8">
+                        <p>A unified framework for low-level 4D vision perception tasks, bridging 2D, 3D, and temporal understanding for autonomous navigation and robotics applications.</p>
+                        <p>
+                            <a href="https://research.nvidia.com/labs/lpr/l4p/" class="btnlink">project page</a>
+                            <a href="https://arxiv.org/abs/2502.13078" class="btnlink">arXiv</a>
+                            <a href="https://www.youtube.com/watch?v=uD31n0ovOig" class="btnlink">video</a>
+                            <a href="https://research.nvidia.com/labs/lpr/l4p/" class="btnlink">code (coming soon)</a>
+                        </p>
+                        <p class="pub">Abhishek Badki*, <u>Hang Su</u>*, Bowen Wen, and Orazio Gallo,
+                            &quot;<strong>L4P: Low-level 4D Vision Perception Unified</strong>&quot;, <i>arXiv 2025</i>.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="myanchor" id="zero-msf"><a href="https://research.nvidia.com/labs/lpr/zero_msf/">Zero-shot Monocular Scene Flow Estimation in the Wild</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/zeromsf.gif" width="175" alt="Zero-shot Scene Flow"></a></div>
+                    <div class="col-sm-8">
+                        <p>A novel approach for zero-shot monocular scene flow estimation that works in challenging real-world scenarios without requiring training on specific datasets.</p>
+                        <p class="award-highlight">🏆 CVPR 2025 Oral, Best Paper Award Candidate</p>
+                        <p>
+                            <a href="https://research.nvidia.com/labs/lpr/zero_msf/" class="btnlink">project page</a>
+                            <a href="https://arxiv.org/abs/2501.10357" class="btnlink">arXiv</a>
+                            <a href="https://www.youtube.com/watch?v=HRcJxAOWszA" class="btnlink">video</a>
+                            <a href="https://research.nvidia.com/labs/lpr/zero_msf/" class="btnlink">code (coming soon)</a>
+                        </p>
+                        <p class="pub">Yiqing Liang, Abhishek Badki*, <u>Hang Su</u>*, James Tompkin, and Orazio Gallo,
+                            &quot;<strong>Zero-shot Monocular Scene Flow Estimation in the Wild</strong>&quot;, <i>CVPR 2025</i>.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="myanchor" id="hybriddepth"><a href="https://github.com/cake-lab/HybridDepth">HybridDepth: Robust Depth Fusion</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/hybriddepth.png" width="175" alt="HybridDepth"></a></div>
+                    <div class="col-sm-8">
+                        <p>Depth estimation that combines depth from focus and single-image priors for robust metric depth fusion using focal stack images captured from a camera.</p>
+                        <p>
+                            <a href="https://github.com/cake-lab/HybridDepth" class="btnlink">code</a>
+                            <a href="https://openaccess.thecvf.com/content/WACV2025/papers/Ganj_HybridDepth_Robust_Metric_Depth_Fusion_by_Leveraging_Depth_from_Focus_WACV_2025_paper.pdf" class="btnlink">pdf</a>
+                            <a href="https://arxiv.org/abs/2407.18443" class="btnlink">arXiv</a>
+                        </p>
+                        <p class="pub">Ashkan Ganj, <u>Hang Su</u>, and Tian Guo,
+                            &quot;<strong>HybridDepth: Robust Metric Depth Fusion by Leveraging Depth from Focus and Single-Image Priors</strong>&quot;, <i>WACV 2025</i>.
+                        </p>
+                        <p class="pub">Ashkan Ganj, <u>Hang Su</u>, and Tian Guo,
+                            &quot;<strong>Toward Robust Depth Fusion for Mobile AR With Depth from Focus and Single-Image Priors</strong>&quot;, <i>ISMAR 2024</i>.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="myanchor" id="surround-view"><a href="https://youtu.be/t-UPlPlrYgQ?t=37">Surround View Synthesis for In-Car Parking Visualization</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/svs.gif" width="175" alt="Surround View Synthesis"></a></div>
+                    <div class="col-sm-8">
+                        <p>Comprehensive surround-view visualizations to assist with in-car parking and navigation scenarios.</p>
+                        <p>
+                            <a href="https://youtu.be/t-UPlPlrYgQ?t=37" class="btnlink">video</a>
+                        </p>
+                        <p class="pub">Abhishek Badki*, <u>Hang Su</u>*, Jan Kautz, and Orazio Gallo,
+                            &quot;<strong>Surround View Synthesis for In-Car Parking Visualization</strong>&quot;, <i>NVIDIA GTC 2024</i>.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="myanchor" id="blobgen3d"><a href="https://research.nvidia.com/labs/genair/publication/blob3dgen2024/">BlobGEN-3D: Compositional 3D-Consistent Freeview Image Generation</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/blobgen3d.png" width="175" alt="BlobGEN-3D"></a></div>
+                    <div class="col-sm-8">
+                        <p>A novel framework for compositional 3D-consistent freeview image generation using 3D blobs, enabling high-quality novel view synthesis with improved geometric consistency.</p>
+                        <p>
+                            <a href="https://research.nvidia.com/labs/genair/publication/blob3dgen2024/" class="btnlink">project page</a>
+                            <a href="https://dl.acm.org/doi/10.1145/3680528.3687645" class="btnlink">paper</a>
+                        </p>
+                        <p class="pub">Chao Liu, Weili Nie, Sifei Liu, Abhishek Badki, <u>Hang Su</u>, Morteza Mardani, Benjamin Eckart, and Arash Vahdat,
+                            &quot;<strong>BlobGEN-3D: Compositional 3D-Consistent Freeview Image Generation with 3D Blobs</strong>&quot;, <i>SIGGRAPH Asia 2024</i>.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="myanchor" id="fova-depth"><a href="https://research.nvidia.com/labs/lpr/fova-depth/">FoVA-Depth: Field-of-View Agnostic Depth Estimation</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/fova.png" width="175" alt="FoVA-Depth"></a></div>
+                    <div class="col-sm-8">
+                        <p>Field-of-view agnostic depth estimation method that enables robust cross-dataset generalization, addressing the challenge of varying camera parameters at inference time and across different datasets.</p>
+                        <p class="award-highlight">🏆 3DV 2024 Oral</p>
+                        <p>
+                            <a href="https://research.nvidia.com/labs/lpr/fova-depth/" class="btnlink">project page</a>
+                            <a href="https://arxiv.org/abs/2401.13786" class="btnlink">arXiv</a>
+                            <a href="https://github.com/NVlabs/fova-depth" class="btnlink">code</a>
+                        </p>
+                        <p class="pub">Daniel Lichy, <u>Hang Su</u>, Abhishek Badki, Jan Kautz, and Orazio Gallo,
+                            &quot;<strong>FoVA-Depth: Field-of-View Agnostic Depth Estimation for Cross-Dataset Generalization</strong>&quot;, <i>3DV 2024</i>.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="myanchor" id="nvtorchcam"><a href="https://github.com/NVlabs/nvTorchCam">nvTorchCam: Camera-Agnostic Differentiable Geometric Vision</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/nvtorchcam.png" width="175" alt="nvTorchCam"></a></div>
+                    <div class="col-sm-8">
+                        <p>An open-source PyTorch library providing camera-agnostic differentiable geometric vision operations, enabling seamless integration of various camera models in deep learning pipelines. </p>
+                        <p>
+                            <a href="https://research.nvidia.com/labs/lpr/fova-depth/" class="btnlink">project page</a>
+                            <a href="https://arxiv.org/abs/2410.12074" class="btnlink">arXiv</a>
+                            <a href="https://github.com/NVlabs/nvTorchCam" class="btnlink">code</a>
+                        </p>
+                        <p class="pub">Daniel Lichy, <u>Hang Su</u>, Abhishek Badki, Jan Kautz, and Orazio Gallo,
+                            &quot;<strong>nvTorchCam: An Open-source Library for Camera-Agnostic Differentiable Geometric Vision</strong>&quot;, <i>arXiv 2024</i>.
+                        </p>
+                    </div>
+                </div>
+                
+                <h4 class="myanchor" id="mobile-ar-depth"><a href="https://research.nvidia.com/labs/lpr/publication/ganj2024mobile/">Mobile AR Depth Estimation: Challenges & Prospects</a></h4>
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/depth_hotmobile.png" width="175" alt="Mobile AR Depth"></a></div>
+                    <div class="col-sm-8">
+                        <p>A comprehensive study examining the challenges and future prospects of depth estimation for mobile augmented reality applications, addressing key technical and practical considerations.</p>
+                        <p>
+                            <a href="https://arxiv.org/abs/2310.14437" class="btnlink">arXiv</a>
+                        </p>
+                        <p class="pub">Ashkan Ganj, Yiqin Zhao, <u>Hang Su</u>, and Tian Guo,
+                            &quot;<strong>Mobile AR Depth Estimation: Challenges &amp; Prospects</strong>&quot;, <i>International Workshop on Mobile Computing Systems and Applications (HotMobile) 2024</i>.
+                        </p>
+                    </div>
+                </div>
+                
                 <h4 class="myanchor" id="pac"><a href="pac/index.html">Pixel-Adaptive Convolution</a></h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/pac.png"><img class="img-thumbnail" src="img/pac.png" width="175"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/pac.png" width="175"
                                                                      alt="PAC"></a></div>
                     <div class="col-sm-8">
                         <p>PAC is a content-adaptive operation that generalizes standard convolution and bilateral
@@ -194,34 +531,34 @@
                             <a href="http://arxiv.org/abs/1904.05373" class="btnlink">arXiv</a>
                             <a href="https://github.com/NVlabs/pacnet" class="btnlink">code</a>
                         </p>
-                        <p class="pub">Hang Su, Varun Jampani, Deqing Sun, Orazio Gallo, Erik Learned-Miller, and Jan Kautz,
+                        <p class="pub"><u>Hang Su</u>, Varun Jampani, Deqing Sun, Orazio Gallo, Erik Learned-Miller, and Jan Kautz,
                             &quot;<strong>Pixel-Adaptive Convolutional Neural Networks</strong>&quot;, <i>CVPR 2019</i>.
                         </p>
                     </div>
                 </div>
                 <h4 class="myanchor" id="hnh"><a href="#hnh">Half&Half Benchmarks</a></h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/hnh_1.png"><img class="img-thumbnail" src="img/hnh.png" width="175"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/hnh.png" width="175"
                                                                      alt="Half&Half"></a></div>
                     <div class="col-sm-8">
                         <p>Making intelligent decisions about unseen objects given only partial observations is a fundamental component of visual common sense. In this work, we formalize prediction tasks critical to visual common sense and introduce the Half&Half benchmarks to measure an agent's ability to perform these tasks.  </p>
                         <p><a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/Vision_Meets_Cognition_Camera_Ready/Singh_HalfHalf_New_Tasks_and_Benchmarks_for_Studying_Visual_Common_Sense_CVPRW_2019_paper.pdf" class="btnlink">pdf</a></p>
-                        <p class="pub">Ashish Singh*, Hang Su*, SouYoung Jin, Huaizu Jiang, Chetan Manjesh, Geng Luo, Ziwei He, Li Hong, Erik G. Learned-Miller, and Rosemary Cowell,
-                            &quot;<strong>Half&Half: New Tasks and Benchmarks for Studying Visual Common Sense</strong>&quot;, <i>CVPR 2019 Workshop on Vision Meets Cognition (to appear)</i>.
+                        <p class="pub">Ashish Singh*, <u>Hang Su</u>*, SouYoung Jin, Huaizu Jiang, Chetan Manjesh, Geng Luo, Ziwei He, Li Hong, Erik G. Learned-Miller, and Rosemary Cowell,
+                            &quot;<strong>Half&Half: New Tasks and Benchmarks for Studying Visual Common Sense</strong>&quot;, <i>CVPR 2019 Workshop on Vision Meets Cognition</i>.
                         </p>
                     </div>
                 </div>
                 <h4 class="myanchor" id="splatnet"><a href="splatnet/index.html">SPLATNet: Sparse Lattice Networks for
                     Point Cloud Processing</a></h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/splatnet_teaser.png"><img class="img-thumbnail"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail"
                                                                                  src="img/splatnet_teaser.png"
                                                                                  width="175" alt="SPLATNET"></a></div>
                     <div class="col-sm-8">
                         <p>A fast and end-to-end trainable neural network that directly works on point clouds and can
                             also do joint 2D-3D processing.</p>
-                        <p style="color:#DE4E2F">Awarded "Best Paper Honorable Mention" at CVPR'18!</p>
-                        <p style="color:#DE4E2F">NVAIL Pioneering Research Award</p>
+                        <p class="award-highlight">🏆 CVPR 2018 Oral, Best Paper Award Honorable Mention</p>
+                        <p class="award-highlight">🏆 NVAIL Pioneering Research Award</p>
                         <p><a href="splatnet/index.html" class="btnlink">project page</a>
                             <a href="https://youtu.be/x18WUuBNK7E?t=5m32s" class="btnlink">video</a>
                             <a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Su_SPLATNet_Sparse_Lattice_CVPR_2018_paper.pdf" class="btnlink">pdf</a>
@@ -229,51 +566,52 @@
                             <a href="https://github.com/NVlabs/splatnet" class="btnlink">code</a>
                         </p>
 
-                        <p class="pub">Hang Su, Varun Jampani, Deqing Sun, Subhransu Maji, Evangelos Kalogerakis, Ming-Hsuan Yang,
+                        <p class="pub"><u>Hang Su</u>, Varun Jampani, Deqing Sun, Subhransu Maji, Evangelos Kalogerakis, Ming-Hsuan Yang,
                             and Jan Kautz, &quot;<strong>SPLATNet: Sparse Lattice Networks for Point Cloud
-                                Processing</strong>&quot;, <i>CVPR 2018 (oral)</i>.
+                                Processing</strong>&quot;, <i>CVPR 2018</i>.
                         </p>
                     </div>
                 </div>
                 <h4 class="myanchor" id="erdosrenyi"><a href="https://sites.google.com/site/erclustering/">End-to-end
                     Face Detection and Cast Grouping in Movies Using Erdős–Rényi Clustering</a></h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/hannah.png"><img class="img-thumbnail"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail"
                                                                         src="img/hannah_teaser.png" width="175"
                                                                         alt="erdos-renyi"></a></div>
                     <div class="col-sm-8">
                         <p>An end-to-end system for detecting and clustering faces by identity in full-length
                             movies.</p>
+                        <p class="award-highlight">🏆 ICCV 2017 Spotlight</p>
                         <p>
                             <a href="https://sites.google.com/site/erclustering/" class="btnlink">project page</a>
                             <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Jin_End-To-End_Face_Detection_ICCV_2017_paper.pdf" class="btnlink">pdf</a>
                             <a href="https://arxiv.org/abs/1709.02458" class="btnlink">arXiv</a>
                             <a href="https://github.com/souyoungjin/erclustering" class="btnlink">code</a>
                         </p>
-                        <p class="pub">SouYoung Jin, Hang Su, Chris Stauffer, and Erik Learned-Miller, &quot;<strong>End-to-end face
+                        <p class="pub">SouYoung Jin, <u>Hang Su</u>, Chris Stauffer, and Erik Learned-Miller, &quot;<strong>End-to-end face
                             detection and cast grouping in movies using Erdős–Rényi clustering</strong>&quot;, <i>ICCV
-                            2017 (splotlight)</i>.
+                            2017</i>.
                         </p>
                     </div>
                 </div>
                 <h4 class="myanchor" id="mvcnn"><a href="http://vis-www.cs.umass.edu/mvcnn/">Multi-view CNN (MVCNN) for
                     3D Shape Recognition</a></h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/mvcnn.png"><img class="img-thumbnail" src="img/mvcnn_teaser.png"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/mvcnn_teaser.png"
                                                                        width="175" alt="MVCNN architecture"></a></div>
                     <div class="col-sm-8">
                         <p>A novel CNN architecture that combines information from multiple views of a 3D shape into a
                             single and compact shape descriptor offering state-of-the-art performance in a range of
                             recognition tasks. </p>
-                        <p style="color:#DE4E2F">Ranked #1 in <a href="https://shapenet.cs.stanford.edu/shrec16/"
-                                                                 style="color:#DE4E2F">a SHREC'16 contest</a>!</p>
+                        <!-- <p class="award-highlight">🏆 Ranked #1 in <a href="https://shapenet.cs.stanford.edu/shrec16/" class="award-link">SHREC'16 Large-Scale 3D Shape Retrieval Contest</a></p> -->
+                        <p class="award-highlight">🏆 Ranked #1 in SHREC'16 Large-Scale 3D Shape Retrieval Contest</p>
                         <p>
                             <a href="http://vis-www.cs.umass.edu/mvcnn/" class="btnlink">project page</a>
                             <a href="https://www.youtube.com/watch?v=P0ivrbPjvnM" class="btnlink">video</a>
                             <a href="https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.pdf" class="btnlink">pdf</a>
                             <a href="https://arxiv.org/abs/1505.00880" class="btnlink">arXiv</a>
                             <a href="https://github.com/suhangpro/mvcnn" class="btnlink">code</a></p>
-                        <p class="pub">Hang Su, Subhransu Maji, Evangelos Kalogerakis, and Erik Learned-Miller, &quot;<strong>Multi-view
+                        <p class="pub"><u>Hang Su</u>, Subhransu Maji, Evangelos Kalogerakis, and Erik Learned-Miller, &quot;<strong>Multi-view
                             Convolutional Neural Networks for 3D Shape Recognition</strong>&quot;, <i>ICCV 2015</i>.
                         </p>
                         <!--
@@ -291,26 +629,29 @@
                 </div>
                 <h4 class="myanchor" id="scene-attr"><a href="#scene-attr">The SUN Attribute Database: Beyond Categories
                     for Deeper Scene Understanding</a></h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/attributes.png"><img class="img-thumbnail"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail"
                                                                             src="img/attributes.png" width="175"
                                                                             alt="Scene Attributes"></a></div>
                     <div class="col-sm-8">
                         <p>The first large-scale scene attribute database.</p>
-                        <p><a href="https://www.dropbox.com/s/bxuzy2ve5qzc0t0/SUNAttributeIJCV2014.pdf?dl=0" class="btnlink">pdf</a></p>
-                        <p class="pub">G. Patterson, C. Xu, H. Su, J. Hays, &quot;<strong>The SUN Attribute Database: Beyond
+                        <p>
+                            <a href="https://cs.brown.edu/~gmpatter/sunattributes.html" class="btnlink">project page</a>
+                            <a href="https://www.dropbox.com/s/bxuzy2ve5qzc0t0/SUNAttributeIJCV2014.pdf?dl=0" class="btnlink">pdf</a>
+                        </p>
+                        <p class="pub">G. Patterson, C. Xu, <u>H. Su</u>, J. Hays, &quot;<strong>The SUN Attribute Database: Beyond
                             Categories for Deeper Scene Understanding</strong>&quot;, <i>IJCV, May 2014</i>.
                     </div>
                 </div>
             </div>
             <div class="sec">
-                <h2 style="font-weight:lighter">Earlier Projects</h2>
+                <h2 class="section-heading">Earlier Projects</h2>
                 <h4 class="myanchor" id="gloc">Layered Global-Local (GLOC) Model for Image Parts Labelling with
                     Occlusion
                     <small>2014</small>
                 </h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/gloc.png"><img class="img-thumbnail" src="img/gloc.png"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/gloc.png"
                                                                       width="175"
                                                                       alt="Global-Local Occlusion Model"></a></div>
                     <div class="col-sm-8">
@@ -325,10 +666,10 @@
 
                 </div>
                 <h4 class="myanchor" id="face-detection">Face & Pose Detection Using Deformable Part-based Model
-                    <small>2012 Summer (@<a href="http://www.eharmony.com/">eHarmony</a>)</small>
+                    <small>2012 Summer @<a href="http://www.eharmony.com/">eHarmony</a></small>
                 </h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/faces.png"><img class="img-thumbnail" src="img/faces.png"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/faces.png"
                                                                        width="175" alt="Face Detection"></a></div>
                     <div class="col-sm-8">
                         <p>In this project, I implemented in C++ a human face and body detection system based on the
@@ -342,8 +683,8 @@
                 <h4 class="myanchor" id="photo-quality">Photo Quality Assessment on User Proﬁle Photos
                     <small>2012</small>
                 </h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a><img class="img-thumbnail" src="img/quality_smoothness.jpg" width="175"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/quality_smoothness.jpg" width="175"
                                                   alt="Photo Quality Assessment"></a></div>
                     <div class="col-sm-8">
                         <p>The goal of this project is to automatically distinguish high quality
@@ -359,8 +700,8 @@
                 <h4 class="myanchor" id="car-detection">Front Vehicle Detection Using Onboard Camera
                     <small>2010-2011</small>
                 </h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/car_detection.png"><img class="img-thumbnail"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail"
                                                                                src="img/car_detection.png" width="175"
                                                                                alt="Vehicle Detection & Road Segmentation"></a>
                     </div>
@@ -377,8 +718,8 @@
                 <h4 class="myanchor" id="3d-model">3D Modelling of Peking University Campus
                     <small>2008</small>
                 </h4>
-                <div class="row project-item" style="font-size:100%">
-                    <div class="col-sm-4"><a href="img/sketchup.jpg"><img class="img-thumbnail" src="img/sketchup.jpg"
+                <div class="row project-item">
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/sketchup.jpg"
                                                                           width="175" alt="One of the 3D models"></a>
                     </div>
                     <div class="col-sm-8">
@@ -404,25 +745,73 @@
             </div>
             END CALENDAR SECTION -->
 
-        </div>
-        <!-- END MAIN PANEL -->
-
+    </div>
+    <!-- END MAIN PANEL -->
     </div>
 </div>
+<!-- END MAIN WRAPPER -->
 
 <!-- bottom navbar-->
 <div class="navbar navbar-default navbar-static-bottom">
     <div class="container">
         <p class="navbar-text pull-left">Powered by <a href="http://getbootstrap.com/">Bootstrap</a> | Last Updated:
-            2024-01-07</p>
+            September 2025</p>
     </div>
 </div>
 <!-- END bottom navbar-->
+
+<!-- Image Modal for enlarged viewing -->
+<div id="imageModal" class="image-modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="modalCaption"></div>
+</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<script>
+// Image modal functionality
+$(document).ready(function() {
+    // Open modal when thumbnail is clicked
+    $('.project-thumbnail').click(function(e) {
+        e.preventDefault();
+        var modal = $('#imageModal');
+        var modalImg = $('#modalImage');
+        var caption = $('#modalCaption');
+        
+        modal.show();
+        modalImg.attr('src', $(this).find('img').attr('src'));
+        caption.text($(this).find('img').attr('alt'));
+        
+        // Prevent body scrolling when modal is open
+        $('body').addClass('modal-open');
+    });
+    
+    // Close modal when X is clicked or outside modal is clicked
+    $('.modal-close, #imageModal').click(function(e) {
+        if (e.target === this) {
+            $('#imageModal').hide();
+            $('body').removeClass('modal-open');
+        }
+    });
+    
+    // Prevent closing when clicking on the image itself
+    $('#modalImage').click(function(e) {
+        e.stopPropagation();
+    });
+    
+    // Close modal with escape key
+    $(document).keyup(function(e) {
+        if (e.keyCode === 27) { // Escape key
+            $('#imageModal').hide();
+            $('body').removeClass('modal-open');
+        }
+    });
+});
+</script>
 </body>
 </html>

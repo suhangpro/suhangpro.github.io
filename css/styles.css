@@ -1,32 +1,130 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+/* Academic Typography */
 body{
-    font-family: "Ubuntu", Helvetica, Arial, sans-serif!important;
+    font-family: "Crimson Text", "Times New Roman", "Georgia", serif !important;
+    line-height: 1.6;
+    color: #2c3e50;
+    font-size: 16px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+
+
+/* Section heading styles with #76B900 theme */
+.section-heading {
+    font-weight: 600;
+    color: #1a252f;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #76B900;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+/* Main page title styling */
+.page-title {
+    font-weight: 300;
+    color: #1a252f;
+    font-size: 32pt;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #76B900;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+}
+
+/* Project titles */
+h4 a {
+    color: #5a8a00;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+h4 a:hover {
+    color: #76B900;
+    text-decoration: underline;
+}
 
 .sec{
-    padding-bottom: 1px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
 }
 
+/* Academic publication styling with green accents */
 .pub{
-    outline-style: dashed;
-    outline-color: silver;
-    outline-width: 1px;
-    padding: 8px;
-    margin-top: 20px;
-    background-color: #FAFBFB;
+    border-left: 4px solid #76B900;
+    padding: 15px 20px;
+    margin: 25px 0;
+    background-color: #f9fcf6;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
+.pub strong {
+    font-weight: 600;
+    color: #1a252f;
+}
+
+/* Underlined author name styling */
+.pub u {
+    text-decoration: underline;
+    text-decoration-color: #76B900;
+    text-decoration-thickness: 2px;
+    font-weight: 600;
+}
+
+/* Academic link styling with green theme */
 .btnlink{
-    background-color: #428bcb;
-    padding: 2px;
-    color: white;
+    background-color: transparent;
+    padding: 3px 8px;
+    color: #5a8a00;
     text-decoration: none;
+    border: 1px solid #76B900;
+    font-weight: 400;
+    font-size: 13px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    display: inline-block;
+    transition: all 0.2s ease;
+    font-family: "Source Sans Pro", Arial, sans-serif;
 }
 
 .btnlink:hover{
-    background-color: #D2691E;
-    padding: 2px;
+    background-color: #76B900;
     color: white;
+    text-decoration: none;
+    border-color: #76B900;
+}
+
+/* Awards and honors styling - subtle academic approach with red tones */
+.award-highlight {
+    color: #b22222;
+    background-color: #fafafa;
+    padding: 2px 6px;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    margin: 6px 0;
+    display: inline-block;
+}
+
+/* Links within award highlights */
+.award-highlight .award-link,
+.award-highlight a {
+    color: #b22222;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.award-highlight .award-link:hover,
+.award-highlight a:hover {
+    color: #dc143c;
     text-decoration: none;
 }
 
@@ -47,9 +145,257 @@ body {
   margin:0px;
 }
 
+/* Project item styling */
 .project-item {
-	padding-top: 10px;
-	padding-bottom: 25px;
+	padding: 20px 0;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #e8f2d9;
+}
+
+.project-item:last-child {
+	border-bottom: none;
+}
+
+/* Contact section styling */
+#sideinfo h4 {
+    color: #5a8a00;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+}
+
+#sideinfo dt {
+    color: #5a8a00;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#sideinfo dd {
+    font-size: 14px;
+    color: #5d6d7e;
+    margin-bottom: 8px;
+}
+
+/* Navbar academic styling with green theme */
+.navbar-inverse {
+    background-color: #5a8a00;
+    border-color: #76B900;
+}
+
+/* Navbar link styling for visibility */
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #e8f2d9;
+    background-color: rgba(118, 185, 0, 0.2);
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #76B900;
+    font-weight: 600;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: rgba(118, 185, 0, 0.3);
+}
+
+/* Dropdown caret styling */
+.navbar-inverse .navbar-nav .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav .open .caret,
+.navbar-inverse .navbar-nav .open .caret:hover,
+.navbar-inverse .navbar-nav .open .caret:focus {
+    border-top-color: #e8f2d9;
+    border-bottom-color: #e8f2d9;
+}
+
+/* Dropdown menu styling for Research Projects */
+.dropdown-menu li.research-project {
+    background-color: #f7fcf0;
+    border-left: 3px solid #76B900;
+}
+
+.dropdown-menu li.research-project a {
+    color: #5a8a00;
+    font-weight: 500;
+    padding-left: 25px;
+}
+
+.dropdown-menu li.research-project a:hover,
+.dropdown-menu li.research-project a:focus {
+    background-color: #eef8e6;
+    color: #406800;
+}
+
+/* Dropdown menu styling for Earlier Projects */
+.dropdown-menu li.earlier-project {
+    background-color: #f8f9fa;
+    border-left: 3px solid #bdc3c7;
+}
+
+.dropdown-menu li.earlier-project a {
+    color: #6c757d;
+    font-style: italic;
+    padding-left: 25px;
+}
+
+.dropdown-menu li.earlier-project a:hover,
+.dropdown-menu li.earlier-project a:focus {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+/* Academic utility classes */
+.email-icon {
+    padding-bottom: 4px;
+    padding-left: 0px;
+}
+
+.eclipse-heading {
+    padding-top: 6px;
+}
+
+.arrow-icon {
+    padding-left: 5px;
+}
+
+/* Academic paragraphs - better spacing */
+p {
+    margin-bottom: 12px;
+    text-align: justify;
+}
+
+/* Academic lists */
+ul, ol {
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Image Modal Styles */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #76B900;
+}
+
+.modal-caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: white;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Animation for modal */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Thumbnail cursor styling */
+.project-thumbnail {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    position: relative;
+    display: block;
+}
+
+.project-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Hover tooltip */
+.project-thumbnail::after {
+    content: "Click to enlarge";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(118, 185, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.project-thumbnail:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 .calendar-container {
