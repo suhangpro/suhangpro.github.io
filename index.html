@@ -390,7 +390,7 @@
                 
                 <h4 class="myanchor" id="l4p"><a href="https://research.nvidia.com/labs/lpr/l4p/">L4P: Low-level 4D Vision Perception Unified</a></h4>
                 <div class="row project-item">
-                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/snowboard_pc.gif" width="175" alt="L4P"></a></div>
+                    <div class="col-sm-4"><a href="#" class="project-thumbnail"><img class="img-thumbnail" src="img/galileo_teaser_small.gif" data-full-src="img/galileo_teaser.mp4" width="175" alt="L4P"></a></div>
                     <div class="col-sm-8">
                         <p>A unified framework for low-level 4D vision perception tasks, bridging 2D, 3D, and temporal understanding for autonomous navigation and robotics applications.</p>
                         <p>
@@ -764,6 +764,9 @@
 <div id="imageModal" class="image-modal">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modalImage">
+    <video class="modal-content" id="modalVideo" controls autoplay muted loop style="display:none;">
+        Your browser does not support the video tag.
+    </video>
     <div class="modal-caption" id="modalCaption"></div>
 </div>
 
@@ -781,10 +784,25 @@ $(document).ready(function() {
         e.preventDefault();
         var modal = $('#imageModal');
         var modalImg = $('#modalImage');
+        var modalVideo = $('#modalVideo');
         var caption = $('#modalCaption');
         
         modal.show();
-        modalImg.attr('src', $(this).find('img').attr('src'));
+        var fullSrc = $(this).find('img').attr('data-full-src') || $(this).find('img').attr('src');
+        
+        // Check if the source is a video file
+        if (fullSrc.toLowerCase().endsWith('.mp4') || fullSrc.toLowerCase().endsWith('.webm') || fullSrc.toLowerCase().endsWith('.ogg')) {
+            // Show video, hide image
+            modalVideo.attr('src', fullSrc);
+            modalVideo.show();
+            modalImg.hide();
+        } else {
+            // Show image, hide video
+            modalImg.attr('src', fullSrc);
+            modalImg.show();
+            modalVideo.hide();
+        }
+        
         caption.text($(this).find('img').attr('alt'));
         
         // Prevent body scrolling when modal is open
@@ -795,12 +813,17 @@ $(document).ready(function() {
     $('.modal-close, #imageModal').click(function(e) {
         if (e.target === this) {
             $('#imageModal').hide();
+            $('#modalVideo')[0].pause(); // Pause video if playing
             $('body').removeClass('modal-open');
         }
     });
     
-    // Prevent closing when clicking on the image itself
+    // Prevent closing when clicking on the image or video itself
     $('#modalImage').click(function(e) {
+        e.stopPropagation();
+    });
+    
+    $('#modalVideo').click(function(e) {
         e.stopPropagation();
     });
     
@@ -808,6 +831,7 @@ $(document).ready(function() {
     $(document).keyup(function(e) {
         if (e.keyCode === 27) { // Escape key
             $('#imageModal').hide();
+            $('#modalVideo')[0].pause(); // Pause video if playing
             $('body').removeClass('modal-open');
         }
     });
